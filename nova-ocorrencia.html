@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nova ocorrência | ROMME_Net</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Page CSS -->
+    <link href="/styles/nova-ocorrencia.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <div class="container-xl">
+        <!-- Menu button -->
+        <button
+          class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbar-menu"
+        >
+          <span class="navbar-toggler-icon fs-6"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand me-auto" href="#">
+          <img src="/images/logo.svg" alt="Logo da ROMME_Net" height="27" />
+        </a>
+
+        <!-- Menu -->
+        <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">ROMME_net</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/dashboard.html">Dashboard</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/ocorrencias.html">Ocorrências</a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Geral
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#materias"
+                      >Materiais</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#maquinas"
+                      >Máquinas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#prestadores"
+                      >Prestadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#servicos"
+                      >Serviços</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- "Nova ocorrência" -->
+        <a class="btn btn-primary" href="/nova-ocorrencia.html"
+          >Nova ocorrência</a
+        >
+      </div>
+    </nav>
+
+    <main>
+      <form id="formulario-ocorrencia" class="card">
+        <div class="card-header fs-4 fw-bold">Nova ocorrência</div>
+
+        <div class="card-body">
+          <fieldset>
+            <legend class="fs-6 fw-semibold text-muted mb-3">
+              Informações gerais
+            </legend>
+
+            <div class="mb-3">
+              <label for="descricao" class="form-label">Descrição</label>
+              <textarea
+                class="form-control"
+                id="descricao"
+                name="descricao"
+                rows="3"
+                required
+              ></textarea>
+              <div class="form-text">Uma descrição detalhada da ocorrência</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="categoria" class="form-label">Categoria</label>
+              <select
+                class="form-select"
+                id="categoria"
+                name="categoria"
+                required
+              >
+                <option selected hidden value="">
+                  Selecione uma categoria
+                </option>
+                <option value="1">Categoria 1</option>
+                <option value="2">Categoria 2</option>
+                <option value="3">Categoria 3</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="id-maquina" class="form-label">Máquina</label>
+              <select
+                class="form-select"
+                id="id-maquina"
+                name="id-maquina"
+                required
+              >
+                <option selected hidden value="">Selecione uma máquina</option>
+                <option value="1">Máquina 1</option>
+                <option value="2">Máquina 2</option>
+                <option value="3">Máquina 3</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="tempo-parado" class="form-label">Tempo parado</label>
+              <input
+                type="number"
+                min="0"
+                class="form-control"
+                id="tempo-parado"
+                name="tempo-parado"
+                required
+              />
+            </div>
+          </fieldset>
+
+          <hr />
+
+          <fieldset>
+            <div class="d-flex mb-3">
+              <legend class="fs-6 fw-semibold text-muted mb-0">
+                Serviços utilizados
+              </legend>
+
+              <div class="adicionar-entrada">
+                <button
+                  class="btn btn-sm btn-outline-primary border-0"
+                  type="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Adicionar serviço"
+                >
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="row align-items-end gx-2 gy-1 mb-3">
+              <div class="col-6">
+                <label for="id-servico" class="form-label">Serviço</label>
+                <select
+                  class="form-select"
+                  id="id-servico"
+                  name="id-servico"
+                  required
+                >
+                  <option selected hidden value="">Selecione um serviço</option>
+                  <option value="1">Serviço 1</option>
+                  <option value="2">Serviço 2</option>
+                  <option value="3">Serviço 3</option>
+                </select>
+              </div>
+
+              <div class="col-6">
+                <label for="id-servico" class="form-label">Prestador</label>
+                <select
+                  class="form-select"
+                  id="id-servico"
+                  name="id-servico"
+                  required
+                >
+                  <option selected hidden value="">Selecione um serviço</option>
+                  <option value="1">Serviço 1</option>
+                  <option value="2">Serviço 2</option>
+                  <option value="3">Serviço 3</option>
+                </select>
+              </div>
+
+              <div class="col-11">
+                <label for="custo-servico" class="form-label">Custo</label>
+                <div class="input-group">
+                  <span class="input-group-text">$</span>
+                  <input
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    id="custo-servico"
+                    name="custo-servico"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="col-1 remover-entrada" style="height: 38px">
+                <button
+                  class="btn btn-sm btn-outline-danger border-0 py-0 px-1"
+                  type="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Remover entrada"
+                >
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="custo-servicos" class="form-label">Custo total</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="form-control"
+                  id="custo-servicos"
+                  name="custo-servicos"
+                  disabled
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <hr />
+
+          <fieldset>
+            <div class="d-flex mb-3">
+              <legend class="fs-6 fw-semibold text-muted mb-0">
+                Materiais utilizados
+              </legend>
+
+              <div class="adicionar-entrada">
+                <button
+                  class="btn btn-sm btn-outline-primary border-0"
+                  type="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Adicionar material"
+                >
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="row align-items-end gx-2 mb-3">
+              <div class="col-8">
+                <label for="id-servico" class="form-label">Material</label>
+                <select
+                  class="form-select"
+                  id="id-servico"
+                  name="id-servico"
+                  required
+                >
+                  <option selected hidden value="">
+                    Selecione um material
+                  </option>
+                  <option value="1">Material 1</option>
+                  <option value="2">Material 2</option>
+                  <option value="3">Material 3</option>
+                </select>
+              </div>
+
+              <div class="col-3">
+                <label for="quantidade-material" class="form-label">Quantidade</label>
+                <input
+                  type="number"
+                  min="0"
+                  class="form-control"
+                  id="quantidade-material"
+                  name="quantidade-material"
+                  required
+                />
+              </div>
+
+              <div class="col-1 remover-entrada" style="height: 38px">
+                <button
+                  class="btn btn-sm btn-outline-danger border-0 py-0 px-1"
+                  type="button"
+                  data-bs-toggle="tooltip"
+                  data-bs-placement="top"
+                  title="Remover entrada"
+                >
+                  <i class="bi bi-x-lg"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="custo-materiais" class="form-label">Custo total</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input
+                  type="number"
+                  min="0"
+                  class="form-control"
+                  id="custo-materiais"
+                  name="custo-materiais"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <hr />
+
+          <fieldset>
+            <legend class="fs-6 fw-semibold text-muted mb-3">
+              Data da ocorrência
+            </legend>
+
+            <div class="mb-3">
+              <label for="criado-em" class="form-label">Data e hora</label>
+              <div class="input-group">
+                <input
+                  class="form-control"
+                  id="criado-em"
+                  name="criado-em"
+                  type="datetime-local"
+                  required
+                />
+                <button class="btn btn-sm btn-primary" type="button">
+                  Data e hora atual
+                </button>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary">Registrar</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Bootstrap JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      document
+        .querySelectorAll('[data-bs-toggle="tooltip"]')
+        .forEach((entry) => new bootstrap.Tooltip(entry));
+    </script>
+  </body>
+</html>

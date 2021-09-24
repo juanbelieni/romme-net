@@ -1,0 +1,29 @@
+@mixin center-children {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#formulario-ocorrencia {
+  max-width: 40rem;
+  margin: 2rem auto;
+  background-color: white;
+}
+
+.adicionar-entrada,
+.remover-entrada {
+  button {
+    @include center-children;
+
+    width: 24px;
+    height: 24px;
+
+    i {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.remover-entrada {
+  @include center-children;
+}
