@@ -75,13 +75,14 @@
   </nav>
 
   <main>
+    <!-- Visão Geral das Ocorrências - Cards -->
     <section id="cards-resumo">
       <div class="container-xl">
         <div class="row gy-3">
           <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">20</p>
+                <p class="text-primary fs-1 fw-bold mb-1">29</p>
                 <p class="mb-2 fw-bold">Ocorrências este mês</p>
               </div>
             </div>
@@ -90,8 +91,8 @@
           <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">20</p>
-                <p class="mb-2 fw-bold">Ocorrências este mês</p>
+                <p class="text-primary fs-1 fw-bold mb-1">08</p>
+                <p class="mb-2 fw-bold">Ocorrências esta semana</p>
               </div>
             </div>
           </div>
@@ -99,49 +100,67 @@
           <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">20</p>
-                <p class="mb-2 fw-bold">Ocorrências este mês</p>
+                <p class="text-primary fs-1 fw-bold mb-1">03</p>
+                <p class="mb-2 fw-bold">Ocorrências hoje</p>
               </div>
             </div>
           </div>
 
-          <div class=" col-sm-6 col-md-6 col-lg-3">
+          <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">20</p>
-                <p class="mb-2 fw-bold">Ocorrências este mês</p>
+                <p class="text-primary fs-1 fw-bold mb-1">R$ 3521,45</p>
+                <p class="mb-2 fw-bold">Total gasto no último mês</p>
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </section>
 
+    <!-- Ranking Máquinas com + despesa -->
     <section class="container-xl py-4">
       <div class="row gy-3">
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Últimas ocorrências</h5>
-              <h6 class="card-subtitle text-muted">Ocorrências registradas nas últimas 24 horas</h6>
+              <h5 class="card-title">Máquinas com maior aumento de gastos</h5>
+              <h6 class="card-subtitle text-muted">Registros no último mês</h6>
             </div>
 
-            <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              <span class="text-truncate me-2">Fresadora CNC</span>
+              <span class="badge rounded-pill bg-danger">&uarr; 53%</span>
+            </li>
+
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
-                <small class="text-muted text-nowrap">20 minutos atrás</small>
+                <span class="text-truncate me-2">Compressor</span>
+                <span class="badge rounded-pill bg-danger">&uarr; 45%</span>
               </li>
 
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Ocorrência de exemplo</span>
-                <small class="text-muted text-nowrap">4 horas atrás</small>
+                <span class="text-truncate me-2">Pulverizador</span>
+                <span class="badge rounded-pill bg-danger">&uarr; 40%</span>
               </li>
+
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="text-truncate me-2">Forno de Indução</span>
+                <span class="badge rounded-pill bg-warning text-dark">&uarr; 20%</span>
+              </li>
+
+
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <span class="text-truncate me-2">Torno Mecânico </span>
+                <span class="badge rounded-pill bg-warning text-dark">&uarr; 15%</span>
+              </li>
+
             </ul>
           </div>
         </div>
 
+        <!-- Últimas Ocorrências -->
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
@@ -151,15 +170,19 @@
 
             <ul class="list-group list-group-flush">
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                  ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                <span class="text-truncate me-2">Compressores: Manutenção preventiva - troca dos filtros de ar</span>
                 <small class="text-muted text-nowrap">20 minutos atrás</small>
               </li>
 
               <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Ocorrência de exemplo</span>
+                <span class="text-truncate me-2">Torno Mecânico: Manutenção corretiva - ajuste cabeçote móvel</span>
                 <small class="text-muted text-nowrap">4 horas atrás</small>
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span class="text-truncate me-2">Fresadora: Manutenção preventiva - lubrificação</span>
+                  <small class="text-muted text-nowrap">5 horas atrás</small>
+                </li>
+
               </li>
             </ul>
           </div>
