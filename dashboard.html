@@ -1,200 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | ROMME_Net</title>
 
-  <title>Dashboard | ROMME_Net</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
 
-  <!-- Bootstrap icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- Page CSS -->
+    <link href="/styles/dashboard.css" rel="stylesheet" />
+  </head>
 
-  <!-- Page CSS -->
-  <link href="/styles/dashboard.css" rel="stylesheet" />
-</head>
-
-<body class="bg-light">
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-    <div class="container-xl">
-
-      <!-- Menu button -->
-      <button class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#navbar-menu">
-        <span class="navbar-toggler-icon fs-6"></span>
-      </button>
-
-      <!-- Brand -->
-      <a class="navbar-brand me-auto" href="#">
-        <img src="/images/logo.svg" alt="Logo da ROMME_Net" height="27">
-      </a>
-
-      <!-- Menu -->
-      <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title">ROMME_net</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
-        </div>
-
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
-            <li class="nav-item">
-              <a class="nav-link active" href="/dashboard.html">Dashboard</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/ocorrencias.html">Ocorrências</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                Geral
-              </a>
-
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/geral.html#materias">Materiais</a></li>
-                <li><a class="dropdown-item" href="/geral.html#maquinas">Máquinas</a></li>
-                <li><a class="dropdown-item" href="/geral.html#prestadores">Prestadores</a></li>
-                <li><a class="dropdown-item" href="/geral.html#servicos">Serviços</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- "Nova ocorrência" -->
-      <a class="btn btn-primary" href="/nova-ocorrencia.html">Nova ocorrência</a>
-    </div>
-  </nav>
-
-  <main>
-    <!-- Visão Geral das Ocorrências - Cards -->
-    <section id="cards-resumo">
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container-xl">
-        <div class="row gy-3">
-          <div class="col-sm-6 col-lg-3">
-            <div class="card shadow-sm text-center py-2">
-              <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">29</p>
-                <p class="mb-2 fw-bold">Ocorrências este mês</p>
-              </div>
-            </div>
+        <!-- Menu button -->
+        <button
+          class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbar-menu"
+        >
+          <span class="navbar-toggler-icon fs-6"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand me-auto" href="#">
+          <img src="/images/logo.svg" alt="Logo da ROMME_Net" height="27" />
+        </a>
+
+        <!-- Menu -->
+        <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">ROMME_net</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+            ></button>
           </div>
 
-          <div class="col-sm-6 col-lg-3">
-            <div class="card shadow-sm text-center py-2">
-              <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">08</p>
-                <p class="mb-2 fw-bold">Ocorrências esta semana</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="card shadow-sm text-center py-2">
-              <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">03</p>
-                <p class="mb-2 fw-bold">Ocorrências hoje</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="card shadow-sm text-center py-2">
-              <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">R$ 3521,45</p>
-                <p class="mb-2 fw-bold">Total gasto no último mês</p>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Ranking Máquinas com + despesa -->
-    <section class="container-xl py-4">
-      <div class="row gy-3">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Máquinas com maior aumento de gastos</h5>
-              <h6 class="card-subtitle text-muted">Registros no último mês</h6>
-            </div>
-
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-              <span class="text-truncate me-2">Fresadora CNC</span>
-              <span class="badge rounded-pill bg-danger">&uarr; 53%</span>
-            </li>
-
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Compressor</span>
-                <span class="badge rounded-pill bg-danger">&uarr; 45%</span>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/dashboard.html">Dashboard</a>
               </li>
 
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Pulverizador</span>
-                <span class="badge rounded-pill bg-danger">&uarr; 40%</span>
+              <li class="nav-item">
+                <a class="nav-link" href="/ocorrencias.html">Ocorrências</a>
               </li>
 
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Forno de Indução</span>
-                <span class="badge rounded-pill bg-warning text-dark">&uarr; 20%</span>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Geral
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#materias">
+                      Materiais
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#maquinas">
+                      Máquinas
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#prestadores">
+                      Prestadores
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#servicos">
+                      Serviços
+                    </a>
+                  </li>
+                </ul>
               </li>
-
-
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Torno Mecânico </span>
-                <span class="badge rounded-pill bg-warning text-dark">&uarr; 15%</span>
-              </li>
-
             </ul>
           </div>
         </div>
 
-        <!-- Últimas Ocorrências -->
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Últimas ocorrências</h5>
-              <h6 class="card-subtitle text-muted">Ocorrências registradas nas últimas 24 horas</h6>
+        <!-- "Nova ocorrência" -->
+        <a class="btn btn-primary" href="/nova-ocorrencia.html">
+          Nova ocorrência
+        </a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Visão Geral das Ocorrências - Cards -->
+      <section id="cards-resumo">
+        <div class="container-xl">
+          <div class="row gy-3">
+            <div class="col-sm-6 col-lg-3">
+              <div class="card shadow-sm text-center py-2">
+                <div class="card-body">
+                  <p class="text-primary fs-1 fw-bold mb-1">29</p>
+                  <p class="mb-2 fw-bold">Ocorrências este mês</p>
+                </div>
+              </div>
             </div>
 
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Compressores: Manutenção preventiva - troca dos filtros de ar</span>
-                <small class="text-muted text-nowrap">20 minutos atrás</small>
-              </li>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card shadow-sm text-center py-2">
+                <div class="card-body">
+                  <p class="text-primary fs-1 fw-bold mb-1">08</p>
+                  <p class="mb-2 fw-bold">Ocorrências esta semana</p>
+                </div>
+              </div>
+            </div>
 
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                <span class="text-truncate me-2">Torno Mecânico: Manutenção corretiva - ajuste cabeçote móvel</span>
-                <small class="text-muted text-nowrap">4 horas atrás</small>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card shadow-sm text-center py-2">
+                <div class="card-body">
+                  <p class="text-primary fs-1 fw-bold mb-1">03</p>
+                  <p class="mb-2 fw-bold">Ocorrências hoje</p>
+                </div>
+              </div>
+            </div>
 
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                  <span class="text-truncate me-2">Fresadora: Manutenção preventiva - lubrificação</span>
-                  <small class="text-muted text-nowrap">5 horas atrás</small>
+            <div class="col-sm-6 col-lg-3">
+              <div class="card shadow-sm text-center py-2">
+                <div class="card-body">
+                  <p class="text-primary fs-1 fw-bold mb-1">R$ 3521,45</p>
+                  <p class="mb-2 fw-bold">Total gasto no último mês</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ranking Máquinas com + despesa -->
+      <section class="container-xl py-4">
+        <div class="row gy-3">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Máquinas com maior aumento de gastos</h5>
+                <h6 class="card-subtitle text-muted">
+                  Registros no último mês
+                </h6>
+              </div>
+
+              <ul class="list-group list-group-flush">
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">Fresadora CNC</span>
+                  <span class="badge rounded-pill bg-danger">&uarr; 53%</span>
                 </li>
 
-              </li>
-            </ul>
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">Compressor</span>
+                  <span class="badge rounded-pill bg-danger">&uarr; 45%</span>
+                </li>
+
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">Pulverizador</span>
+                  <span class="badge rounded-pill bg-danger">&uarr; 40%</span>
+                </li>
+
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">Forno de Indução</span>
+                  <span class="badge rounded-pill bg-warning text-dark"
+                    >&uarr; 20%</span
+                  >
+                </li>
+
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">Torno Mecânico </span>
+                  <span class="badge rounded-pill bg-warning text-dark"
+                    >&uarr; 15%</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Últimas Ocorrências -->
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Últimas ocorrências</h5>
+                <h6 class="card-subtitle text-muted">
+                  Ocorrências registradas nas últimas 24 horas
+                </h6>
+              </div>
+
+              <ul class="list-group list-group-flush">
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">
+                    Compressores: Manutenção preventiva - troca dos filtros de
+                    ar
+                  </span>
+                  <small class="text-muted text-nowrap">20 minutos atrás</small>
+                </li>
+
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">
+                    Torno Mecânico: Manutenção corretiva - ajuste cabeçote móvel
+                  </span>
+                  <small class="text-muted text-nowrap">4 horas atrás</small>
+                </li>
+
+                <li
+                  class="
+                    list-group-item
+                    d-flex
+                    justify-content-between
+                    align-items-center
+                  "
+                >
+                  <span class="text-truncate me-2">
+                    Fresadora: Manutenção preventiva - lubrificação
+                  </span>
+                  <small class="text-muted text-nowrap">5 horas atrás</small>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- Bootstrap JS bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"></script>
-</body>
-
+    <!-- Bootstrap JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
