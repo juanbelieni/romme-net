@@ -1,0 +1,73 @@
+
+footer{
+    display: flex; 
+    flex-direction: column;
+    padding: 50px;
+
+}
+
+
+
+footer h2  ,footer p , footer a, footer span ,footer h3{ 
+    color:darkslategrey
+}
+.footer-box{
+    display: flex;
+    width: 30%;
+    padding: 1%;
+    float: left;
+}
+footer.wrapper::after{
+    clear:both;
+    content:""
+    display: block;
+}
+.company-footer{
+    width:80%;
+}
+.company-footer.h2{
+    margin-top:20px;
+}
+.company-footer.h2,.company-footer h3, .company-footer p{
+    margin: bottom 20px;
+}
+.footer-list li {
+    margim-bottom:15px  
+}
+
+.footer-list a {
+    transition:5s;  
+}
+.footer-list a:hover {
+    color:aliceblue;
+}
+
+.footer-list a:after {
+    color:aliceblue;
+}
+.service-footer{
+    width:80%
+}
+.footer-list.footer-article-list span{
+ display:block;
+ float:nome
+
+}
+.fab{
+    font: size 30px;
+    margin: right 10px;
+    float:left
+}
+
+.footer-list li span{
+    float:left
+    height:30px;
+    line: height 30px;
+}
+.footer-bottom{
+    border-top:1px solid ;
+}
+.footer-bottom p{
+  font: weight 600px;
+  margin: top 40px;
+}
