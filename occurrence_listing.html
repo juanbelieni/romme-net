@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Dashboard</title>
+  <title>Ocorrências</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -77,95 +77,154 @@
   <main>
 
     <div class="container-xl" id="find_oc_box">
-        <div class="row">
-            <div class="col-md-6">
-                <!-- "Seletor superior esquerdo" -->
-                <h6>Ir para a data: 
-                    <button type="button" class="btn btn-secondary">Datis</button>
-                </h6>
-                <h6>Mostrar apenas: 
-                    <button type="button" class="btn btn-secondary">Seletoris</button>
-                </h6>
-                <h6>Ordenar por: 
-                    <button type="button" class="btn btn-secondary">Ordis</button>
-                </h6>
-                <!-- \\"Seletor superior esquerdo" -->
+        
+      <!-- "Lista de ocorrências" -->
+      <div>
+        <div class="container-xl">
+          <div class="table-responsive">
+              <div class="table-wrapper">
+                  <div class="table-title">
+                      <div class="row">
+                          <div class="col-sm-8"><h2>Lista de <b>registros</b></h2></div>
 
-                <!-- "Mostra ocorrencias em lista" -->
-                <div class="card">
-                    <div class="card-header">
-                      Listis
-                    </div>
-                    <div>
-                        <a>
-                            Num.: x
-                        </a>
-                        <a>
-                            data: xx/xx/xxxx
-                        </a>
-                        <a>
-                            Maquina: envasadoris
-                        </a>
-                    </div>  
-                        <a>
-                            Descrição: Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam...
-                        </a>  
-                    </div>  
-                    
-                <!-- "Mostra ocorrencias em lista" -->
+                          <!-- "Se for colocar pesquisas diferenciadas, entra aqui" -->
 
-                <!-- "Paginação" -->
-                <nav>
-                    <ul class="pagination">
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="<--">
-                          <span aria-hidden="true">&laquo;</span>
-                        </a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#" aria-label="-->">
-                          <span aria-hidden="true">&raquo;</span>
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                <!-- \\"Paginação" -->
-            </div>
+                          <div class="col-sm-4">
+                              <div class="search-box">
+                                  <i class="material-icons">&#xE8B6;</i>
+                                  <input type="text" class="form-control" placeholder="Search&hellip;">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <table class="table table-striped table-hover table-bordered">
+                      <thead>
+                          <tr>
+                              <th>#</th>
+                              <th>Data<i class="fa fa-sort"></i></th>
+                              <th>Máquina<i class="fa fa-sort"></i></th>
+                              <th>Categoria<i class="fa fa-sort"></i></th>
+                              <th>Descrição<i class="fa fa-sort"></i></th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>1</td>
+                              <td>27/09/2021</td>
+                              <td>Envasadoris</td>
+                              <td>Pneumatiquis</td>
+                              <td class= "text-truncate" >Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Si num tem leite então bota uma pinga aí cumpadi! Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</td>
+                              
 
-            <!-- "Expande ocorrência" -->
-            <div class="col-md-6">
-                <a> 
-                    <h4>ID: x</h4>
-                </a>
-                <a>
-                    <h4>Data: x</h4>
-                </a>
+                              <td>
+                                <a href="#" class="view" title="Expandir" data-toggle="tooltip"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="edit" title="Editar" data-toggle="tooltip"><i class="bi bi-pencil"></i></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>2</td>
+                              <td>27/09/2021</td>
+                              <td>Extrusoris</td>
+                              <td>Mecaniquis</td>
+                              <td class= "text-truncate" >Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Si num tem leite então bota uma pinga aí cumpadi! Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</td>
+                              
+                              
+                              <td>
+                                <a href="#" class="view" title="Expandir" data-toggle="tooltip"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="edit" title="Editar" data-toggle="tooltip"><i class="bi bi-pencil"></i></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>3</td>
+                              <td>27/09/2021</td>
+                              <td>Montadoris de Grampis</td>
+                              <td>Eletriquis</td>
+                              <td class= "text-truncate" >Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Si num tem leite então bota uma pinga aí cumpadi! Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</td>
+                              
 
-                <a>
-                    <h2>Descrição:</h2>
-                </a>
+                              <td>
+                                <a href="#" class="view" title="Expandir" data-toggle="tooltip"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="edit" title="Editar" data-toggle="tooltip"><i class="bi bi-pencil"></i></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>4</td>
+                              <td>27/09/2021</td>
+                              <td>Extrusoris</td>
+                              <td>Eletriquis</td>
+                              <td class= "text-truncate" >Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Si num tem leite então bota uma pinga aí cumpadi! Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</td>
+                              
 
-                <a>
-                    <h4>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Leite de capivaris, leite de mula manquis sem cabeça. A ordem dos tratores não altera o pão duris.</h4>
-                </a>
+                              <td>
+                                <a href="#" class="view" title="Expandir" data-toggle="tooltip"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="edit" title="Editar" data-toggle="tooltip"><i class="bi bi-pencil"></i></a>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>2</td>
+                              <td>27/09/2021</td>
+                              <td>Extrusoris</td>
+                              <td>Pneumatiquis</td>
+                              <td class= "text-truncate" >Mussum Ipsum, cacilds vidis litro abertis. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum. Si num tem leite então bota uma pinga aí cumpadi! Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</td>
+                              
 
-                <ul>
-                    <li>Maquina: modelis</li>
-                    <li>Categoria: tipis de manutenção</li>
-                    <li>Tempo parado: tempo é dinheiris!</li>
-                    <li>Custo total: dinheiris 
+                              <td>
+                                <a href="#" class="view" title="View" data-toggle="tooltip"><i class="bi bi-eye"></i></a>
+                                <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="bi bi-pencil"></i></a>
+                              </td>
+                          </tr>        
+                      </tbody>
+                  </table>
+                  <div class="clearfix">
+                      <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                      <ul class="pagination">
+                          <li class="page-item disabled"><a href="#"><i class="bi bi-arrow-left"></i></a></li>
+                          <li class="page-item"><a href="#" class="page-link">1</a></li>
+                          <li class="page-item"><a href="#" class="page-link">2</a></li>
+                          <li class="page-item active"><a href="#" class="page-link">3</a></li>
+                          <li class="page-item"><a href="#" class="page-link">4</a></li>
+                          <li class="page-item"><a href="#" class="page-link">5</a></li>
+                          <li class="page-item"><a href="#" class="page-link"><i class="bi bi-arrow-right"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>  
+      </div>   
 
-                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Saiba mais
-                        </a>
+      <!-- "Expande ocorrência" -->
+      <div>
+          <a> 
+              <h4>ID: x</h4>
+          </a>
+          <a>
+              <h4>Data: x</h4>
+          </a>
 
-                        <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            Pra onde foi todo o dinheiris?
-                        </div>
-                        </div>
-                    </li>
-                </ul>
+          <a>
+              <h2>Descrição:</h2>
+          </a>
+
+          <a>
+              <h4>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Leite de capivaris, leite de mula manquis sem cabeça. A ordem dos tratores não altera o pão duris.</h4>
+          </a>
+
+          <ul>
+              <li>Maquina: modelis</li>
+              <li>Categoria: tipis de manutenção</li>
+              <li>Tempo parado: tempo é dinheiris!</li>
+              <li>Custo total: dinheiris 
+
+                  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      Saiba mais
+                  </a>
+
+                  <div class="collapse" id="collapseExample">
+                  <div class="card card-body">
+                      Pra onde foi todo o dinheiris?
+                  </div>
+                  </div>
+              </li>
+          </ul>
 
 
 
@@ -175,12 +234,12 @@
 
 
 
-            </div>
-            <!-- \\"Expande ocorrência" -->
+      </div>
+      <!-- \\"Expande ocorrência" -->
 
 
 
-        </div>
+  
     </div>
 
 
