@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+  <!-- Page CSS -->
+  <link href="styles/occurrence_listing.css" rel="stylesheet" />
+</head>
+
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div class="container-xl">
+
+        <!-- Menu button -->
+        <button class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#navbar-menu">
+          <span class="navbar-toggler-icon fs-6"></span>
+        </button>
+  
+        <!-- Brand -->
+        <a class="navbar-brand me-auto" href="#">
+          <img src="images/logo.svg" alt="Logo da ROMME_Net" height="27">
+        </a>
+  
+        <!-- Menu -->
+        <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">ROMME_net</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+          </div>
+  
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/dashboard.html">Dashboard</a>
+              </li>
+  
+              <li class="nav-item">
+                <a class="nav-link" href="/occurrence_listing.html">Ocorrências</a>
+              </li>
+  
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                  Geral
+                </a>
+  
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/geral.html#materias">Materiais</a></li>
+                  <li><a class="dropdown-item" href="/geral.html#maquinas">Máquinas</a></li>
+                  <li><a class="dropdown-item" href="/geral.html#prestadores">Prestadores</a></li>
+                  <li><a class="dropdown-item" href="/geral.html#servicos">Serviços</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- "Nova ocorrência" -->
+        <a class="btn btn-primary" href="/nova-ocorrencia.html">Nova ocorrência</a>
+      </div>
+  </nav>
+
+  <main>
+
+    <div class="container-xl" id="find_oc_box">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- "Seletor superior esquerdo" -->
+                <h6>Ir para a data: 
+                    <button type="button" class="btn btn-secondary">Datis</button>
+                </h6>
+                <h6>Mostrar apenas: 
+                    <button type="button" class="btn btn-secondary">Seletoris</button>
+                </h6>
+                <h6>Ordenar por: 
+                    <button type="button" class="btn btn-secondary">Ordis</button>
+                </h6>
+                <!-- \\"Seletor superior esquerdo" -->
+
+                <!-- "Mostra ocorrencias em lista" -->
+                <div class="card">
+                    <div class="card-header">
+                      Listis
+                    </div>
+                    <div>
+                        <a>
+                            Num.: x
+                        </a>
+                        <a>
+                            data: xx/xx/xxxx
+                        </a>
+                        <a>
+                            Maquina: envasadoris
+                        </a>
+                    </div>  
+                        <a>
+                            Descrição: Mussum Ipsum, cacilds vidis litro abertis. Mauris nec dolor in eros commodo tempor. Aenean aliquam...
+                        </a>  
+                    </div>  
+                    
+                <!-- "Mostra ocorrencias em lista" -->
+
+                <!-- "Paginação" -->
+                <nav>
+                    <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="<--">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="-->">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                <!-- \\"Paginação" -->
+            </div>
+
+            <!-- "Expande ocorrência" -->
+            <div class="col-md-6">
+                <a> 
+                    <h4>ID: x</h4>
+                </a>
+                <a>
+                    <h4>Data: x</h4>
+                </a>
+
+                <a>
+                    <h2>Descrição:</h2>
+                </a>
+
+                <a>
+                    <h4>Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite então bota uma pinga aí cumpadi! Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Leite de capivaris, leite de mula manquis sem cabeça. A ordem dos tratores não altera o pão duris.</h4>
+                </a>
+
+                <ul>
+                    <li>Maquina: modelis</li>
+                    <li>Categoria: tipis de manutenção</li>
+                    <li>Tempo parado: tempo é dinheiris!</li>
+                    <li>Custo total: dinheiris 
+
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Saiba mais
+                        </a>
+
+                        <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Pra onde foi todo o dinheiris?
+                        </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- \\"Expande ocorrência" -->
+
+
+
+        </div>
+    </div>
+
+
+  </main>
+
+  <!-- Bootstrap JS bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
