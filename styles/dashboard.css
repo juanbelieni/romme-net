@@ -8,6 +8,6 @@
 .line-chart {
   width: 100%;
   max-width: 50rem;
-  text-align: center;
+  margin: auto;
 }
 /*# sourceMappingURL=dashboard.css.map */
