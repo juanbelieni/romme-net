@@ -24,6 +24,9 @@
 
     <!-- Page CSS -->
     <link href="/styles/dashboard.css" rel="stylesheet" />
+
+     <!-- Chart Js -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
   </head>
 
   <body class="bg-light">
@@ -63,7 +66,7 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/ocorrencias.html">Ocorrências</a>
+                <a class="nav-link" href="/occurrence_listing.html">Ocorrências</a>
               </li>
 
               <li class="nav-item dropdown">
@@ -107,6 +110,27 @@
         <a class="btn btn-primary" href="/nova-ocorrencia.html">
           Nova ocorrência
         </a>
+
+        <!-- Avatar -->
+        <div class="nav-item dropdown">
+
+          <a
+          class="nav-link dropdown-toggle "
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          >
+            <div class="btn btn-primary rounded-circle">
+            <strong>C</strong>
+            </div>
+          </a>
+
+          <div class="dropdown-menu">
+            <li><a class="dropdown-item" href="/avatar.html#sair">Sair</a></li>
+          </div>
+
+        </div>
+
       </div>
     </nav>
 
@@ -292,6 +316,12 @@
           </div>
         </div>
       </section>
+
+      <!-- Gráfico de linha -->
+      <div class = "line-chart container-xl">
+        <canvas id="line-chart" ></canvas>
+      </div>
+
     </main>
 
     <!-- Bootstrap JS bundle -->
@@ -300,5 +330,30 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Gráfico de linhas - Quantidade corrências corretivas mensais -->
+    <script>
+      let ctx = document.getElementById("line-chart")
+      let chart = new Chart(document.getElementById("line-chart"), {
+    
+          type: 'line',
+          data:  {
+          labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Ago','Set', 'Out', 'Nov', 'Dez'],
+          datasets: [
+            {
+              label: 'Gasto Anual com Ocorrências Corretivas',
+              data: [14, 21, 30, 17, 37, 33, 24, 19, 8, 0, 0],
+              backgroundColor: [
+              '#396afc'
+              ],
+            }
+          ]
+        }
+      })
+    
+    
+    
+    </script>
+
   </body>
 </html>
