@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro | ROMME_Net</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!--  Outros Icones-->
+    <script src="https://kit.fontawesome.com/695e6a8f13.js" crossorigin="anonymous"></script>
+
+    <!-- Page CSS -->
+    <link href="/styles/cadastro.css" rel="stylesheet" /> 
+
+</head>
+<body>
+    <div class="container-xl" id="find_oc_box">
+        
+        <!-- "Lista de funcionários" -->
+        <div>
+          <div class="container-xl">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col"><h2>Lista de funcionários</h2></div>
+                        <div class="col ">
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#add">Adicionar Conta</button>
+                            </div>
+                        </div>
+                <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Nome<i class="fa fa-sort"></i></th>
+                            <th>E-mail<i class="fa fa-sort"></i></th>
+                            <th>Telefone<i class="fa fa-sort"></i></th>
+                            <th>Cargo<i class="fa fa-sort"></i></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Cleison da Silva</td>
+                            <td>cleison.silva@yahoo.com</td>
+                            <td>(+12) 93456-7890 </td>
+                            <td>Gerente Geral</td>
+                            <td style>
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"><i class="bi bi-trash" ></i></button> 
+                                <button type="button" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="clearfix">
+                    <div class="hint-text">Mostrando <b>10</b> de <b>30</b> registros</div>
+
+
+
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a href="#" class="page-link"><i class="bi bi-arrow-left"></i></a></li>
+                        <li class="page-item"><a href="#" class="page-link"><i class="bi bi-arrow-right"></i></a></li>
+                    </ul>
+                </div>
+            </div> 
+        </div>   
+
+
+        <!-- Modal deletar usuário -->
+        <div class="modal fade" id="delete">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Deseja deletar essa conta?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                        <button type="submit" class="btn btn-danger">Deletar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal adicionar usuário -->
+        <div class="modal fade" id="add">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Dados do usuário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <input type="text" class="input-group mb-3" placeholder="Nome"/>
+                            <input type="email" class="input-group mb-3" placeholder="E-mail"/>
+                            <input type="tel" class="input-group mb-3" placeholder="Telefone"/>
+                            <input type="text" class="input-group mb-3" placeholder="Cargo"/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal editar usuário -->
+        <div class="modal fade" id="edit">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title">Dados do usuário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <input type="text" class="input-group mb-3" placeholder="Nome" value="Cleison da Silva"/>
+                            <input type="email" class="input-group mb-3" placeholder="E-mail" value="cleison.silva@yahoo.com"/>
+                            <input type="tel" class="input-group mb-3" placeholder="Telefone" value="(12) 93456-7890"/>
+                            <input type="text" class="input-group mb-3" placeholder="Cargo" value="Gerente Geral"/>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Bootstrap JS bundle -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>
