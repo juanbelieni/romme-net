@@ -34,12 +34,12 @@
         <h1 class="h3 mb-3 font-weight-normal fw-bold text-center">Login</h1>
         <form>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="exampleInputEmail1">
+                <label for="InputEmail1" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="InputEmail1">
             </div>
             <div class="mb-4">
-                <label for="exampleInputPassword1" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="InputPassword1" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="InputPassword1">
             </div>
             <div class="d-grid mx-auto mb-4">
                 <input type="submit" class="btn btn-primary" value="Entrar">
@@ -62,8 +62,16 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+            <form>
+              <label for="InputEmail2" class="form-label">Insira o e-mail da sua conta:</label>
+              <input type="email" class="form-control is-valid is-invalid" id="InputEmail2"/>
+              <div class="valid-feedback">Um e-mail foi enviado para você.</div>
+              <div class="invalid-feedback">Esse e-mail não está cadastrado.</div>
+              
+            </form>
         </div>
         <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancelar</button>
           <button type="submit" class="btn btn-primary">Enviar</button>
         </div>
       </div>
