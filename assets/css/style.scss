@@ -1,4 +1,3 @@
-
 footer{
     display: flex; 
     flex-direction: column;
@@ -6,10 +5,14 @@ footer{
 
 }
 
+.container{
+    display: flex;
+}
 footer h2  ,footer p , footer a, footer span ,footer h3{ 
     color:darkslategrey
 }
 .footer-box{
+    
     width: 30%;
     padding: 1%;
     float: left;
@@ -59,7 +62,7 @@ footer.wrapper:after{
 .footer-list li span{
     float:left
     height:30px;
-    line: height 30px;
+    line:height 30px;
 }
 .footer-bottom{
     border-top:1px solid ;
