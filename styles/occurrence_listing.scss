@@ -47,7 +47,7 @@ table.table tr {
 }
 
 table.table-striped tbody tr:nth-of-type(odd) {
-    background-color: $table-brackground-color;
+    background-color: $table-background-color;
 }
 table.table-striped.table-hover tbody tr:hover {
     background: $cell-white;
@@ -135,6 +135,7 @@ table.table td i {
             a:hover {
                 color: #666;
             }
+        }
         i {
             font-size: 16px;
             padding-top: 6px
