@@ -3,3 +3,11 @@
     max-width: 410px;
     max-height: 410px;
 }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
