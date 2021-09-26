@@ -37,7 +37,7 @@
     <link rel="stylesheet" href="/styles/footer.css" />
   </head>
 
-  <body class="bg-light d-flex flex-column" style="height: 100vh;">
+  <body class="bg-light d-flex flex-column" style="height: 100vh">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container-xl">
@@ -128,7 +128,7 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="#">Sair</a></li>
+            <a class="dropdown-item" href="#">Sair</a>
           </div>
         </div>
       </div>
@@ -190,7 +190,7 @@
                                     Novo prestador
                                   </div>
 
-                                  <div class="card-body">
+                                  <fieldset class="card-body">
                                     <legend
                                       class="fs-6 fw-semibold text-muted mb-3"
                                     >
@@ -198,46 +198,39 @@
                                     </legend>
 
                                     <div class="mb-3">
-                                      <label
-                                        for="tempo-parado"
-                                        class="form-label"
-                                        >Nome</label
-                                      >
+                                      <label class="form-label"> Nome </label>
                                       <input
                                         class="form-control"
                                         id="nome"
                                         name="nome"
-                                        rows="3"
                                         required
                                       />
                                     </div>
 
                                     <div class="mb-3">
                                       <label
-                                        for="tempo-parado"
+                                        for="telefone"
                                         class="form-label"
                                         >Telefone</label
                                       >
                                       <input
                                         class="form-control"
-                                        id="nome"
+                                        id="telefone"
                                         name="nome"
-                                        rows="3"
                                         required
                                       />
                                     </div>
 
                                     <div class="mb-3">
                                       <label
-                                        for="tempo-parado"
+                                        for="endereco"
                                         class="form-label"
                                         >Endereço</label
                                       >
                                       <input
                                         class="form-control"
-                                        id="nome"
+                                        id="endereco"
                                         name="nome"
-                                        rows="3"
                                         required
                                       />
                                     </div>
@@ -250,7 +243,7 @@
                                     >
                                       Registrar
                                     </button>
-                                  </div>
+                                  </fieldset>
                                 </form>
                               </div>
 
