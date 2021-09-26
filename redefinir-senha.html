@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Redefinir senha | ROMME_Net</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Page CSS -->
+    <link href="/styles/login.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <img src="/images/icon.svg" alt="Logo da ROMME_Net" class="mx-auto d-block mb-5"/> 
+    <div class="container shadow-lg p-3 mb-5 bg-body rounded vertical-center" id="login-box">
+        <h1 class="h3 mb-3 font-weight-normal fw-bold text-center">Redefinir Senha</h1>
+        <form>
+            <div class="mb-3">
+                <label for="InputPassword1" class="form-label">Digite sua nova senha</label>
+                <input type="password" class="form-control is-invalid" id="InputPassword1">
+                <div class="invalid-feedback">
+                    Senha invalida.
+                </div>
+                <div id="passwordHelpBlock" class="form-text">
+                    Sua senha deve ter de 8-20 caracteres.
+                </div>
+                <div>
+                
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="InputPassword2" class="form-label">Repita sua nova senha</label>
+                <input type="password" class="form-control is-invalid" id="InputPassword2">
+                <div class="invalid-feedback">
+                    As senhas não coincidem.
+                </div>
+            </div>
+            <div class="d-grid mx-auto mb-4">
+                <input type="submit" class="btn btn-primary" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+
+
+    <!-- Bootstrap JS bundle -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>
