@@ -124,38 +124,19 @@
                       <h2>Lista de <b>registros</b></h2>
                     </div>
 
-                    <!-- "Se for colocar pesquisas diferenciadas, entra aqui" -->
-
-                    <div class="col">
-                      <div>
-                        <h6>Buscar por:</h6>
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-secondary dropdown-toggle"
-                            type="button"
-                            id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                          >
-                            Dropdown button
-                          </button>
-                          <ul
-                            class="dropdown-menu"
-                            aria-labelledby="dropdownMenuButton1"
-                          >
-                            <li><a class="dropdown-item" href="#">Data</a></li>
-                            <li>
-                              <a class="dropdown-item" href="#"
-                                >Número da emissão</a
-                              >
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                    <!-- "PESQUISA AQUIIII" -->
+                    
+                    
+                    <div class="col-md-auto">
+                      <select class="form-select" aria-label="Default select example">
+                        <option selected>Buscar por: </option>
+                        <option value="1">Data</option>
+                        <option value="2">Número do registro</option>
+                        </select>
                     </div>
 
-                    <div class="col">
-                      <div class="search-box">
+                    <div class="col col-lg-2">                   
+                      <div class="form-control">
                         <i class="bi bi-search"></i>
                         <input
                           type="text"
@@ -164,6 +145,9 @@
                         />
                       </div>
                     </div>
+
+
+                    
                   </div>
                 </div>
 
@@ -183,8 +167,7 @@
                       <td>27/09/2021</td>
                       <td>Envasadoris</td>
                       <td>Pneumatiquis</td>
-                      <td class="text-truncate">
-                        Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      <td class="text-truncate">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
                         Ut sed ex eros. Vivamus sit amet nibh non tellus
                         tristique interdum. Si num tem leite então bota uma
                         pinga aí cumpadi! Sapien in monti palavris qui num
@@ -192,6 +175,7 @@
                         pudia ce receita de bolis, mais bolis eu num gostis.
                       </td>
 
+                      
                       <td>
                       
                       <button class="text-primary" style="background: transparent; outline:0; border:none;"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -200,36 +184,179 @@
 
                         <!-- Modal -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                          <div class="modal-dialog">
+                          <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                               <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Detalhes da Ocorrência</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
                               </div>
                               <div class="modal-body">
                                 <p>ID: 12345678902</p>
                                 <p>Data: 27/09/2021</p>
+                                <p>Manutenção de tipo: Preventiva</p>
                                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                                   <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Descrição</button>
+                                    <button class="nav-link active" id="descricao-tab" data-bs-toggle="tab" data-bs-target="#descricao" type="button" role="tab" aria-controls="descricao" aria-selected="true">Descrição</button>
                                   </li>
+                                
                                   <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Custos</button>
+                                    <button class="nav-link" id="materiais-tab" data-bs-toggle="tab" data-bs-target="#materiais" type="button" role="tab" aria-controls="materiais" aria-selected="false">Materiais</button>
                                   </li>
+
                                   <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Outros</button>
+                                    <button class="nav-link" id="custos-tab" data-bs-toggle="tab" data-bs-target="#custos" type="button" role="tab" aria-controls="custos" aria-selected="false">Custos</button>
+                                  </li>
+
+                                  <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="servicos-tab" data-bs-toggle="tab" data-bs-target="#servicos" type="button" role="tab" aria-controls="servicos" aria-selected="false">Serviços</button>
                                   </li>
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
-                                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Mussum Ipsum, cacilds vidis litro abertis. 
-                                    Casamentiss faiz malandris se pirulitá. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Manduma pindureta quium dia nois paga.
-                                    Quem num gosta di mé, boa gentis num é.</div>
-                                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-                                  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                                  <div class="tab-pane fade show active" id="descricao" role="tabpanel" aria-labelledby="descricao-tab">Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Casamentiss faiz malandris se pirulitá. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.
+
+                                    Viva Forevis aptent taciti sociosqu ad litora torquent. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Delegadis gente finis, bibendum egestas augue arcu ut est. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.
+                                    
+                                    In elementis mé pra quem é amistosis quis leo. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Detraxit consequat et quo num tendi nada.
+                                    
+                                    Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl.
+                                    
+                                    A ordem dos tratores não altera o pão duris. Diuretics paradis num copo é motivis de denguis. Sapien in monti palavris qui num significa nadis i pareci latim. Si num tem leite então bota uma pinga aí cumpadi!
+                                    Quem num gosta di mé, boa gentis num é.
+                                  </div>
+
+                                  <div class="tab-pane fade" id="materiais" role="tabpanel" aria-labelledby="materiais-tab">
+                                    <!--COMEÇA LISTALISTA-->
+                                    <table class="table table-striped table-hover table-bordered">
+                                      <thead>
+                                      <tr>
+                                          <th>Nome<i class="fa fa-sort"></i></th>
+                                          <th>Categoria<i class="fa fa-sort"></i></th>
+                                          <th>Quantidade<i class="fa fa-sort"></i></th>
+                                      </tr>
+                                      </thead>
+                                      
+                                      <tbody>
+                                      <tr>
+                                          <td>Fita isolante</td>
+                                          <td>Elétrica</td>
+                                          <td>5</td>
+                                      </tr>
+                                      
+                                      <tr>
+
+                                          <td>Fita hellermann</td>
+                                          <td>Geral</td>
+                                          <td>1</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Broca 3mm</td>
+                                        <td>Mecânica</td>
+                                        <td>5</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Porca M8</td>
+                                        <td>Mecânica</td>
+                                        <td>20</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Parafuso M8 X 40mm</td>
+                                        <td>Mecânica</td>
+                                        <td>20</td>
+                                      </tr>
+                                    
+                                            
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                    
+
+                                    <!--TERMINA LISTALISTA-->
+
+                                  <div class="tab-pane fade" id="custos" role="tabpanel" aria-labelledby="custos-tab">
+                                    <!--COMEÇA LISTALISTA-->
+                                    <table class="table table-striped table-hover table-bordered">
+                                      <thead>
+                                      <tr>
+                                          <th>Serviço<i class="fa fa-sort"></i></th>
+                                          <th>Material<i class="fa fa-sort"></i></th>
+                                          <th>Total<i class="fa fa-sort"></i></th>
+                                    
+                                      </tr>
+                                      </thead>
+                                      
+                                      <tbody>
+                                      <tr>
+                                          <td>R$ 300,00</td>
+                                          <td>R$ 50,00</td>
+                                          <td>R$ 350,00</td>
+                                      </tr>
+                                      </tbody>
+                                    </table>
+                                      
+                                    <!--TERMINA LISTALISTA-->
+
+                                  </div>
+
+  
+                                  <div class="tab-pane fade" id="servicos" role="tabpanel" aria-labelledby="servicos-tab">
+                                    <!--COMEÇA LISTALISTA-->
+                                    <table class="table table-striped table-hover table-bordered">
+                                      <thead>
+                                      <tr>
+                                          <th>Serviço<i class="fa fa-sort"></i></th>
+                                          <th>Prestador<i class="fa fa-sort"></i></th>
+                                          <th>Custo<i class="fa fa-sort"></i></th>
+                                    
+                                      </tr>
+                                      </thead>
+                                      
+                                      <tbody>
+                                      <tr>
+                                          <td>Tornearia</td>
+                                          <td>Antônio de Souza</td>
+                                          <td>R$ 800,00</td>
+                                      </tr>
+                                      
+                                      <tr>
+
+                                          <td>Fresagem</td>
+                                          <td>Roberto Cardoso</td>
+                                          <td>R$ 600,00</td>
+                                      </tr>
+
+                                      <tr>
+
+                                        <td>Soldagem</td>
+                                        <td>Roberval da Silva</td>
+                                        <td>R$ 700,00</td>
+                                    </tr>
+
+                                    <tr>
+
+                                      <td>Eletricista</td>
+                                      <td>Cláudio Fernandes</td>
+                                      <td>R$ 300,00</td>
+                                  </tr>
+                                  <tr>
+
+                                    <td>Manutenção de caldeira</td>
+                                    <td>Carlos Oliveira</td>
+                                    <td>R$ 600,00</td>
+                                </tr>
+                                
+                                          
+                                      </tbody>
+                                    </table>
+
+                                    <!--TERMINA LISTALISTA-->
+                                  </div>
                                 </div>                           
                                </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                               </div>
                             </div>
                           </div>
@@ -246,9 +373,9 @@
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>27/09/2021</td>
-                      <td>Extrusoris</td>
-                      <td>Mecaniquis</td>
+                      <td>25/02/2015</td>
+                      <td>Extrusora</td>
+                      <td>Mecânica</td>
                       <td class="text-truncate">
                         Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
                         Ut sed ex eros. Vivamus sit amet nibh non tellus
@@ -277,9 +404,9 @@
                     </tr>
                     <tr>
                       <td>3</td>
-                      <td>27/09/2021</td>
-                      <td>Montadoris de Grampis</td>
-                      <td>Eletriquis</td>
+                      <td>25/02/2015</td>
+                      <td>Montadora de Grampos</td>
+                      <td>Elétrica</td>
                       <td class="text-truncate">
                         Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
                         Ut sed ex eros. Vivamus sit amet nibh non tellus
@@ -308,7 +435,7 @@
                     </tr>
                     <tr>
                       <td>4</td>
-                      <td>27/09/2021</td>
+                      <td>25/02/2015</td>
                       <td>Extrusoris</td>
                       <td>Eletriquis</td>
                       <td class="text-truncate">
@@ -525,6 +652,9 @@
                     </tr>
                   </tbody>
                 </table>
+
+
+
                 <div class="clearfix">
                   <div class="hint-text">
                     Mostrando <b>10</b> de <b>500</b> registros
@@ -543,63 +673,6 @@
               </div>
             </div>
           </div>
-
-          <!-- "Expande ocorrência" -->
-          <div class="container-xl">
-            <div class="table-responsive">
-              <div class="table-wrapper">
-                <a>
-                  <h4>ID: x</h4>
-                </a>
-                <a>
-                  <h4>Data: x</h4>
-                </a>
-
-                <a>
-                  <h2>Descrição:</h2>
-                </a>
-
-                <a>
-                  <h4>
-                    Mussum Ipsum, cacilds vidis litro abertis. Si num tem leite
-                    então bota uma pinga aí cumpadi! Praesent vel viverra nisi.
-                    Mauris aliquet nunc non turpis scelerisque, eget. Leite de
-                    capivaris, leite de mula manquis sem cabeça. A ordem dos
-                    tratores não altera o pão duris.
-                  </h4>
-                </a>
-
-                <ul>
-                  <li>
-                    <h5>Maquina:</h5>
-                    <h6>modelis</h6>
-                  </li>
-                  <li>
-                    <h5>Categoria:</h5>
-                    <h6>tipis de manutenção</h6>
-                  </li>
-                  <li>
-                    <h5>Tempo parado:</h5>
-                    <h6>tempo é dinheiris!</h6>
-                  </li>
-                  <li>
-                    <h5>Custo total:</h5>
-                    <h6>dinheiris</h6>
-                  </li>
-                  <li>
-                    <h5>Custo de material:</h5>
-                    <h6>bufunfis</h6>
-                  </li>
-                  <li>
-                    <h5>Custo de serviços:</h5>
-                    <h6>bufunfis</h6>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- \\"Expande ocorrência" -->
       </div>
     </main>
 

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ocorrências</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Page CSS -->
+    <link href="styles/occurrence_listing.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <div class="container-xl">
+        <!-- Menu button -->
+        <button
+          class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbar-menu"
+        >
+          <span class="navbar-toggler-icon fs-6"></span>
+        </button>
+
+        <!-- Brand -->
+        <a class="navbar-brand me-auto" href="#">
+          <img src="images/logo.svg" alt="Logo da ROMME_Net" height="27" />
+        </a>
+
+        <!-- Menu -->
+        <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">ROMME_net</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/dashboard.html">Dashboard</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/occurrence_listing.html"
+                  >Ocorrências</a
+                >
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Geral
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#materias"
+                      >Materiais</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#maquinas"
+                      >Máquinas</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#prestadores"
+                      >Prestadores</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/geral.html#servicos"
+                      >Serviços</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- "Nova ocorrência" -->
+        <a class="btn btn-primary" href="/nova-ocorrencia.html"
+          >Nova ocorrência</a
+        >
+      </div>
+    </nav>
+
+    <main>
+      <div class="container-xl" id="find_oc_box">
+        <!-- "Lista de ocorrências" -->
+        <div>
+          <div class="container-xl">
+            <div class="table-responsive">
+              <div class="table-wrapper">
+                <div class="table-title">
+                  <div class="row">
+                    <div class="col">
+                      <h2>Lista de <b>materiais</b></h2>
+                    </div>
+
+                    <div class="col-md-auto">
+                      <!-- gambiarra -->
+                    </div>
+ 
+                    <div class="col col-lg-2">
+                      <button class="btn btn-primary"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                        Cadastrar material
+                      </button>
+
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModal1Label">Cadastrar nova máquina</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- cadastro de nova maquina -->
+                                <div>
+                                  <form id="formulario-ocorrencia" class="card">
+                                    <div class="card-header fs-4 fw-bold">Novo material</div>
+                            
+                                    <div class="card-body">
+                                      
+                                        <legend class="fs-6 fw-semibold text-muted mb-3">
+                                          Informações do material
+                                        </legend>
+                                        
+                                        <div class="mb-3">
+                                          <label for="tempo-parado" class="form-label">Nome</label>
+                                          <input
+                                            class="form-control"
+                                            id="nome"
+                                            name="nome"
+                                            rows="3"
+                                            required
+                                          />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="categoria" class="form-label">Categoria</label>
+                                            <select
+                                              class="form-select"
+                                              id="categoria"
+                                              name="categoria"
+                                              required
+                                            >
+                                              <option selected hidden value="">
+                                                Selecione uma categoria
+                                              </option>
+                                              <option value="1">Mecânica</option>
+                                              <option value="2">Elétrica</option>
+                                              <option value="2">Hidráulica</option>
+                                              <option value="2">Pneumática</option>
+                                              <option value="2">Geral</option>
+                                              <option value="3">Não cadastrado</option>
+                                            </select>
+                                          </div>
+                                          
+                            
+                                      
+                            
+                                      <hr />
+                            
+                                      
+                            
+                                      <button type="submit" class="btn btn-primary">Registrar</button>
+                                    </div>
+                                  </form>
+                                </div>
+
+                                <!-- \\cadastro de nova maquina -->
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <table class="table table-striped table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Material</th>
+                      <th>Categoria<i class="fa fa-sort"></i></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Fita Isolante</td>
+                      <td>Elétrica</td>
+                      
+                    </tr>
+
+                    <tr>
+                        <td>Fita hellermann</td>
+                        <td>Geral</td>
+            
+                    </tr>
+
+                    <tr>
+                        <td>Broca 3mm</td>
+                        <td>Mecânica</td>
+                    </tr>
+                    <tr>
+                        <td>Broca 5mm</td>
+                        <td>Mecânica</td>
+                    </tr>
+                    <tr>
+                        <td>Broca 6mm</td>
+                        <td>Mecânica</td>
+                    </tr>
+
+                    <tr>
+                        <td>Broca 8mm</td>
+                        <td>Mecânica</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Porca M8</td>
+                        <td>Mecânica</td>
+                    </tr>
+                    <tr>
+                        <td>Porca M10</td>
+                        <td>Mecânica</td>
+                    </tr>
+
+                    <tr>
+                        <td>Parafuso M8 X 40mm</td>
+                        <td>Mecânica</td>
+                      </tr>
+
+                      <tr>
+                        <td>Parafuso M10 X 40mm</td>
+                        <td>Mecânica</td>
+                      </tr>
+
+                    <tr>
+                        <td>Cabo 2,5 casado</td>
+                        <td>Elétrica</td>
+                    </tr>
+
+                    <tr>
+                        <td>Eletroduto</td>
+                        <td>Elétrica</td>
+                    </tr>
+
+                    <tr>
+                        <td>Inversora 5 KW</td>
+                        <td>Elétrica</td>
+                    </tr>
+
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </main>
+
+    <!-- Bootstrap JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
