@@ -83,7 +83,9 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item active" href="/maquinas.html">Máquinas</a>
+                    <a class="dropdown-item active" href="/maquinas.html"
+                      >Máquinas</a
+                    >
                   </li>
                   <li>
                     <a class="dropdown-item" href="/prestadores.html">
@@ -126,7 +128,6 @@
       </div>
     </nav>
 
-
     <main>
       <div class="container-xl" id="find_oc_box">
         <!-- "Lista de ocorrências" -->
@@ -143,77 +144,111 @@
                     <div class="col-md-auto">
                       <!-- gambiarra -->
                     </div>
- 
+
                     <div class="col col-lg-2">
-                      <button class="btn btn-primary"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                      <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal1"
+                      >
                         Cadastrar máquina
                       </button>
 
                       <!-- Modal -->
-                      <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+                      <div
+                        class="modal fade"
+                        id="exampleModal1"
+                        tabindex="-1"
+                        aria-labelledby="exampleModal1Label"
+                        aria-hidden="true"
+                      >
                         <div class="modal-dialog">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModal1Label">Cadastrar nova máquina</h5>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                              <h5 class="modal-title" id="exampleModal1Label">
+                                Cadastrar nova máquina
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Fechar"
+                              ></button>
                             </div>
                             <div class="modal-body">
-                                <!-- cadastro de nova maquina -->
-                                <div>
-                                  <form id="formulario-ocorrencia" class="card">
-                                    <div class="card-header fs-4 fw-bold">Nova ocorrência</div>
-                            
-                                    <div class="card-body">
-                                      
-                                        <legend class="fs-6 fw-semibold text-muted mb-3">
-                                          Informações da máquina
-                                        </legend>
-                                        
-                                        <div class="mb-3">
-                                          <label for="tempo-parado" class="form-label">Nome</label>
-                                          <input
-                                            class="form-control"
-                                            id="nome"
-                                            name="nome"
-                                            rows="3"
-                                            required
-                                          />
-                                        </div>
+                              <!-- cadastro de nova maquina -->
+                              <div>
+                                <form id="formulario-ocorrencia" class="card">
+                                  <div class="card-header fs-4 fw-bold">
+                                    Nova ocorrência
+                                  </div>
 
-                                        <div class="mb-3">
-                                          <label for="descricao" class="form-label">Descrição</label>
-                                          <textarea
-                                            class="form-control"
-                                            id="description"
-                                            name="description"
-                                            rows="3"
-                                            required
-                                          ></textarea>
-                                          <div class="form-text">Uma descrição detalhada da máquina</div>
-                                        </div>
-                            
-                                      
-                            
-                                      <hr />
-                            
-                                      
-                            
-                                      <button type="submit" class="btn btn-primary">Registrar</button>
+                                  <div class="card-body">
+                                    <legend
+                                      class="fs-6 fw-semibold text-muted mb-3"
+                                    >
+                                      Informações da máquina
+                                    </legend>
+
+                                    <div class="mb-3">
+                                      <label
+                                        for="tempo-parado"
+                                        class="form-label"
+                                        >Nome</label
+                                      >
+                                      <input
+                                        class="form-control"
+                                        id="nome"
+                                        name="nome"
+                                        rows="3"
+                                        required
+                                      />
                                     </div>
-                                  </form>
-                                </div>
 
-                                <!-- \\cadastro de nova maquina -->
+                                    <div class="mb-3">
+                                      <label for="descricao" class="form-label"
+                                        >Descrição</label
+                                      >
+                                      <textarea
+                                        class="form-control"
+                                        id="description"
+                                        name="description"
+                                        rows="3"
+                                        required
+                                      ></textarea>
+                                      <div class="form-text">
+                                        Uma descrição detalhada da máquina
+                                      </div>
+                                    </div>
 
+                                    <hr />
+
+                                    <button
+                                      type="submit"
+                                      class="btn btn-primary"
+                                    >
+                                      Registrar
+                                    </button>
+                                  </div>
+                                </form>
+                              </div>
+
+                              <!-- \\cadastro de nova maquina -->
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Fechar
+                              </button>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
 
@@ -229,7 +264,8 @@
                     <tr>
                       <td>1</td>
                       <td>Envasadoris</td>
-                      <td class="text-truncate">Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      <td class="text-truncate">
+                        Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
                         Ut sed ex eros. Vivamus sit amet nibh non tellus
                         tristique interdum. Si num tem leite então bota uma
                         pinga aí cumpadi! Sapien in monti palavris qui num
@@ -238,33 +274,76 @@
                       </td>
 
                       <td>
-                      
-                      <button class="text-primary" style="background: transparent; outline:0; border:none;"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button
+                          class="text-primary"
+                          style="
+                            background: transparent;
+                            outline: 0;
+                            border: none;
+                          "
+                          type="button"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                        >
                           <i class="bi bi-eye"></i>
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div
+                          class="modal fade"
+                          id="exampleModal"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalLabel"
+                          aria-hidden="true"
+                        >
                           <div class="modal-dialog">
                             <div class="modal-content">
                               <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Detalhes da Ocorrência</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                  Detalhes da Ocorrência
+                                </h5>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Fechar"
+                                ></button>
                               </div>
                               <div class="modal-body">
                                 <p class="tab-content">
-                                  Viva Forevis aptent taciti sociosqu ad litora torquent. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Delegadis gente finis, bibendum egestas augue arcu ut est. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.
-                                    
-                                  In elementis mé pra quem é amistosis quis leo. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis! Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Detraxit consequat et quo num tendi nada.
-                                  
-                                  Todo mundo vê os porris que eu tomo, mas ninguém vê os tombis que eu levo! Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Per aumento de cachacis, eu reclamis. Aenean aliquam molestie leo, vitae iaculis nisl.
-                                  
-                                  A ordem dos tratores não altera o pão duris. Diuretics paradis num copo é motivis de denguis. Sapien in monti palavris qui num significa nadis i pareci latim. Si num tem leite então bota uma pinga aí cumpadi!
-                                  Quem num gosta di mé, boa gentis num é.
+                                  Viva Forevis aptent taciti sociosqu ad litora
+                                  torquent. Não sou faixa preta cumpadi, sou
+                                  preto inteiris, inteiris. Delegadis gente
+                                  finis, bibendum egestas augue arcu ut est.
+                                  Admodum accumsan disputationi eu sit. Vide
+                                  electram sadipscing et per. In elementis mé
+                                  pra quem é amistosis quis leo. Si u mundo tá
+                                  muito paradis? Toma um mé que o mundo vai
+                                  girarzis! Nec orci ornare consequat. Praesent
+                                  lacinia ultrices consectetur. Sed non ipsum
+                                  felis. Detraxit consequat et quo num tendi
+                                  nada. Todo mundo vê os porris que eu tomo, mas
+                                  ninguém vê os tombis que eu levo! Nullam
+                                  volutpat risus nec leo commodo, ut interdum
+                                  diam laoreet. Sed non consequat odio. Per
+                                  aumento de cachacis, eu reclamis. Aenean
+                                  aliquam molestie leo, vitae iaculis nisl. A
+                                  ordem dos tratores não altera o pão duris.
+                                  Diuretics paradis num copo é motivis de
+                                  denguis. Sapien in monti palavris qui num
+                                  significa nadis i pareci latim. Si num tem
+                                  leite então bota uma pinga aí cumpadi! Quem
+                                  num gosta di mé, boa gentis num é.
                                 </p>
-                               </div>
+                              </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button
+                                  type="button"
+                                  class="btn btn-secondary"
+                                  data-bs-dismiss="modal"
+                                >
+                                  Fechar
+                                </button>
                               </div>
                             </div>
                           </div>
@@ -275,7 +354,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -304,7 +383,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -333,7 +412,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -362,7 +441,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -391,7 +470,7 @@
                           class="edit"
                           title="Edit"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -420,7 +499,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -449,7 +528,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -479,7 +558,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -508,7 +587,7 @@
                           class="edit"
                           title="Editar"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
@@ -537,16 +616,14 @@
                           class="edit"
                           title="Edit"
                           data-toggle="tooltip"
-                          ><i class="bi bi-pencil"></i
+                          ><i class="bi bi-pencil text-warning"></i
                         ></a>
                       </td>
                     </tr>
                   </tbody>
                 </table>
                 <div class="clearfix">
-                  <div class="hint-text">
-                    Mostrando todos os registros
-                  </div>
+                  <div class="hint-text">Mostrando todos os registros</div>
                   <ul class="pagination">
                     <li class="page-item disabled">
                       <a href="#"><i class="bi bi-arrow-left"></i></a>
@@ -561,70 +638,71 @@
               </div>
             </div>
           </div>
+        </div>
       </div>
     </main>
 
-        <!-- Footer -->
-        <footer class="mt-auto">
-          <div class="flex py-2 bg-primary text-light">
-            <div class="container-lg d-flex align-items-center">
-              <span class="fw-bold me-auto">Entre em contato com a gente!</span>
-    
-              <i class="bi bi-facebook ms-4"></i>
-              <i class="bi bi-twitter ms-4"></i>
-              <i class="bi bi-instagram ms-4"></i>
-              <i class="bi bi-github ms-4"></i>
-            </div>
+    <!-- Footer -->
+    <footer class="mt-auto">
+      <div class="flex py-2 bg-primary text-light">
+        <div class="container-lg d-flex align-items-center">
+          <span class="fw-bold me-auto">Entre em contato com a gente!</span>
+
+          <i class="bi bi-facebook ms-4"></i>
+          <i class="bi bi-twitter ms-4"></i>
+          <i class="bi bi-instagram ms-4"></i>
+          <i class="bi bi-github ms-4"></i>
+        </div>
+      </div>
+
+      <div class="bg-dark text-white py-4">
+        <div class="container-lg my-3">
+          <div class="row gy-4">
+            <section class="col-sm-5">
+              <h1>ROMME_Net</h1>
+
+              <p class="text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                auctor eleifend nisl, ut pellentesque urna. Suspendisse rutrum
+                augue ultrices, cursus libero sed, tincidunt erat. Ut aliquet
+                rhoncus tristique.
+              </p>
+
+              <p style="color: #ddd">&copy;2021</p>
+            </section>
+
+            <section class="col-sm">
+              <h1>Serviços e Suporte</h1>
+
+              <ul>
+                <li><a href="#">Visão Geral</a></li>
+                <li><a href="#">Perguntas frequentes</a></li>
+                <li><a href="#">Suporte especializado</a></li>
+                <li><a href="#">Ajuda</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Privacidade</h1>
+
+              <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Sobre</h1>
+
+              <ul>
+                <li><a href="#">Sobre a empresa</a></li>
+                <li><a href="#">Quem somos?</a></li>
+              </ul>
+            </section>
           </div>
-    
-          <div class="bg-dark text-white py-4">
-            <div class="container-lg my-3">
-              <div class="row gy-4">
-                <section class="col-sm-5">
-                  <h1>ROMME_Net</h1>
-    
-                  <p class="text-white">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                    auctor eleifend nisl, ut pellentesque urna. Suspendisse rutrum
-                    augue ultrices, cursus libero sed, tincidunt erat. Ut aliquet
-                    rhoncus tristique.
-                  </p>
-    
-                  <p style="color: #ddd">&copy;2021</p>
-                </section>
-    
-                <section class="col-sm">
-                  <h1>Serviços e Suporte</h1>
-    
-                  <ul>
-                    <li><a href="#">Visão Geral</a></li>
-                    <li><a href="#">Perguntas frequentes</a></li>
-                    <li><a href="#">Suporte especializado</a></li>
-                    <li><a href="#">Ajuda</a></li>
-                  </ul>
-                </section>
-    
-                <section class="col-sm">
-                  <h1>Privacidade</h1>
-    
-                  <ul>
-                    <li><a href="#">Termos de uso</a></li>
-                    <li><a href="#">Política de privacidade</a></li>
-                  </ul>
-                </section>
-    
-                <section class="col-sm">
-                  <h1>Sobre</h1>
-    
-                  <ul>
-                    <li><a href="#">Sobre a empresa</a></li>
-                    <li><a href="#">Quem somos?</a></li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-          </div>
-        </footer>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap JS bundle -->
     <script
