@@ -83,9 +83,14 @@ table table td {
 table.table td i {
     font-size: 19px;
 }    
+
+.tab-content {
+    white-space: pre-line;
+    justify-content: center;
+}
+
+
 /* END TABLE ================================================================================= */
-
-
 
 
 /* SEARCH BOX================================================================================= */
@@ -159,4 +164,15 @@ table.table td i {
     float: left;
     margin-top: 6px;
     font-size: 95%;
+}
+
+
+.form-control {
+    display: flex;
+    align-items: center;
+    
+}
+
+.bi-search {
+    margin-right: 10px;
 }
