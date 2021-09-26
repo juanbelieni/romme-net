@@ -4,12 +4,22 @@
   background: linear-gradient(to right, #396afc, #2948ff);
 }
 
-#maquinas-com-mais-despesas,
+%list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#maquinas-com-mais-despesas {
+  .list-group-item {
+    @extend %list-item;
+  }
+}
+
 #ultimas-ocorrencias {
   .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @extend %list-item;
   }
 }
 

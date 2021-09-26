@@ -4,8 +4,7 @@
   background: linear-gradient(to right, #396afc, #2948ff);
 }
 
-#maquinas-com-mais-despesas .list-group-item,
-#ultimas-ocorrencias .list-group-item {
+#ultimas-ocorrencias .list-group-item, #maquinas-com-mais-despesas .list-group-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
