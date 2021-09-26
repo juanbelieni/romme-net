@@ -88,6 +88,13 @@ table.table td i {
     white-space: pre-line;
     justify-content: center;
 }
+/*
+.tab-content{
+    line-break:auto;
+}
+*/
+
+
 
 
 /* END TABLE ================================================================================= */
@@ -175,4 +182,8 @@ table.table td i {
 
 .bi-search {
     margin-right: 10px;
+}
+
+.tab-content{
+    line-break:auto;
 }
