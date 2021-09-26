@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,YAAY,CAAA;EACR,UAAU,EAAC,IAAI;CAClB",
-    "sources": [
-        "occurence_listing.scss"
-    ],
-    "names": [],
-    "file": "occurence_listing.css"
-}
