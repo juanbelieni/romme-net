@@ -4,8 +4,16 @@
   background: linear-gradient(to right, #396afc, #2948ff);
 }
 
-.line-chart {
-  width: 100%;
+#maquinas-com-mais-despesas,
+#ultimas-ocorrencias {
+  .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+#grafico-gasto-mensal {
   max-width: 50rem;
   margin: auto;
 }

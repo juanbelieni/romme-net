@@ -8,35 +8,31 @@
     <title>Dashboard | ROMME_Net</title>
     <link rel="icon" href="images/icon.svg" type="image/svg+xml" />
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS do Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-      crossorigin="anonymous" />
+      crossorigin="anonymous"
+    />
 
-    <!-- Bootstrap icons -->
+    <!-- Ícones do Bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
-    <!--footer Css-->
-    <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Page CSS -->
+    <!-- CSS da página -->
     <link href="/styles/dashboard.css" rel="stylesheet" />
 
-    <!-- Chart Js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <!-- CSS do footer-->
+    <link rel="stylesheet" href="/styles/footer.css" />
   </head>
-  
-  <!-- ícones-->
-  <script src="https://kit.fontawesome.com/695e6a8f13.js" crossorigin="anonymous"></script>
+
   <body class="bg-light">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container-xl">
-        <!-- Menu button -->
         <button
           class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0"
           type="button"
@@ -46,12 +42,10 @@
           <span class="navbar-toggler-icon fs-6"></span>
         </button>
 
-        <!-- Brand -->
         <a class="navbar-brand me-auto" href="#">
           <img src="/images/logo.svg" alt="Logo da ROMME_Net" height="27" />
         </a>
 
-        <!-- Menu -->
         <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title">ROMME_net</h5>
@@ -86,24 +80,18 @@
 
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/geral.html#materias">
-                      Materiais
-                    </a>
+                    <a class="dropdown-item" href="/materias.html">Materiais</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/geral.html#maquinas">
-                      Máquinas
-                    </a>
+                    <a class="dropdown-item" href="/maquinas.html">Máquinas</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/geral.html#prestadores">
+                    <a class="dropdown-item" href="/prestadores.html">
                       Prestadores
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/geral.html#servicos">
-                      Serviços
-                    </a>
+                    <a class="dropdown-item" href="/servicos.html">Serviços</a>
                   </li>
                 </ul>
               </li>
@@ -111,12 +99,10 @@
           </div>
         </div>
 
-        <!-- "Nova ocorrência" -->
         <a class="btn btn-primary" href="/nova-ocorrencia.html">
           Nova ocorrência
         </a>
 
-        <!-- Avatar -->
         <div class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle py-0"
@@ -180,11 +166,11 @@
         </div>
       </section>
 
-      <!-- Ranking Máquinas com + despesa -->
-      <section class="container-xl my-4">
-        <div class="row gy-3">
+      <!-- Lista de máquinas com mais despesa e das últimas ocorrências -->
+      <section class="container-xl mt-4 mb-4">
+        <div class="row gy-4">
           <div class="col-md-6">
-            <div class="card">
+            <div class="card" id="maquinas-com-mais-despesas">
               <div class="card-body">
                 <h5 class="card-title">Máquinas com maior aumento de gastos</h5>
                 <h6 class="card-subtitle text-muted">
@@ -193,64 +179,29 @@
               </div>
 
               <ul class="list-group list-group-flush">
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
                   <span class="text-truncate me-2">Fresadora CNC</span>
                   <span class="badge rounded-pill bg-danger">&uarr; 53%</span>
                 </li>
 
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
                   <span class="text-truncate me-2">Compressor</span>
                   <span class="badge rounded-pill bg-danger">&uarr; 45%</span>
                 </li>
 
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
                   <span class="text-truncate me-2">Pulverizador</span>
                   <span class="badge rounded-pill bg-danger">&uarr; 40%</span>
                 </li>
 
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
                   <span class="text-truncate me-2">Forno de Indução</span>
                   <span class="badge rounded-pill bg-warning text-dark"
                     >&uarr; 20%</span
                   >
                 </li>
 
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
                   <span class="text-truncate me-2">Torno Mecânico </span>
                   <span class="badge rounded-pill bg-warning text-dark"
                     >&uarr; 15%</span
@@ -262,7 +213,7 @@
 
           <!-- Últimas Ocorrências -->
           <div class="col-md-6">
-            <div class="card">
+            <div class="card" id="ultimas-ocorrencias">
               <div class="card-body">
                 <h5 class="card-title">Últimas ocorrências</h5>
                 <h6 class="card-subtitle text-muted">
@@ -271,14 +222,7 @@
               </div>
 
               <ul class="list-group list-group-flush">
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
                   <span class="text-truncate me-2">
                     Compressores: Manutenção preventiva - troca dos filtros de
                     ar
@@ -286,28 +230,28 @@
                   <small class="text-muted text-nowrap">20 minutos atrás</small>
                 </li>
 
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
                   <span class="text-truncate me-2">
                     Torno Mecânico: Manutenção corretiva - ajuste cabeçote móvel
                   </span>
                   <small class="text-muted text-nowrap">4 horas atrás</small>
                 </li>
 
-                <li
-                  class="
-                    list-group-item
-                    d-flex
-                    justify-content-between
-                    align-items-center
-                  "
-                >
+                <li class="list-group-item">
+                  <span class="text-truncate me-2">
+                    Fresadora: Manutenção preventiva - lubrificação
+                  </span>
+                  <small class="text-muted text-nowrap">5 horas atrás</small>
+                </li>
+
+                <li class="list-group-item">
+                  <span class="text-truncate me-2">
+                    Fresadora: Manutenção preventiva - lubrificação
+                  </span>
+                  <small class="text-muted text-nowrap">5 horas atrás</small>
+                </li>
+
+                <li class="list-group-item">
                   <span class="text-truncate me-2">
                     Fresadora: Manutenção preventiva - lubrificação
                   </span>
@@ -319,156 +263,89 @@
         </div>
       </section>
 
-      <!-- Gráfico de linha -->
+      <!-- Gráfico sobre o gasto mensal -->
       <div class="container-xl mb-4">
-        <div class="card line-chart">
+        <div class="card" id="grafico-gasto-mensal">
           <div class="card-body">
-            <canvas id="line-chart"></canvas>
+            <canvas></canvas>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- Bootstrap JS bundle -->
+    <!-- Footer -->
+    <footer>
+      <div class="flex py-2 bg-primary text-light">
+        <div class="container-lg d-flex align-items-center">
+          <span class="fw-bold me-auto">Entre em contato com a gente!</span>
+
+          <i class="bi bi-facebook ms-4"></i>
+          <i class="bi bi-twitter ms-4"></i>
+          <i class="bi bi-instagram ms-4"></i>
+          <i class="bi bi-github ms-4"></i>
+        </div>
+      </div>
+
+      <div class="bg-dark text-white py-4">
+        <div class="container-lg my-3">
+          <div class="row gy-4">
+            <section class="col-sm-5">
+              <h1>ROMME_Net</h1>
+
+              <p class="text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                auctor eleifend nisl, ut pellentesque urna. Suspendisse rutrum
+                augue ultrices, cursus libero sed, tincidunt erat. Ut aliquet
+                rhoncus tristique.
+              </p>
+
+              <p style="color: #ddd">&copy;2021</p>
+            </section>
+
+            <section class="col-sm">
+              <h1>Serviços e Suporte</h1>
+
+              <ul>
+                <li><a href="#">Visão Geral</a></li>
+                <li><a href="#">Perguntas frequentes</a></li>
+                <li><a href="#">Suporte especializado</a></li>
+                <li><a href="#">Ajuda</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Privacidade</h1>
+
+              <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Sobre</h1>
+
+              <ul>
+                <li><a href="#">Sobre a empresa</a></li>
+                <li><a href="#">Quem somos?</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS do Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
 
+    <!-- JS do Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 
-    <!--footer-->>
-    <footer>
-      <div class="container">
-        <h1>Entre em contado conosco:</h1> </div>
-
-         <ul class="nav nav-pills nav-fill">
-          <li class="nav-item">
-           
-            <a class="nav-link active" aria-current="page" href="#">
-              <i class="fab fa-facebook-square"></i>Facebook</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fab fa-instagram"> </i>
-              Instagram</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fab fa-github-square"></i>GitHub</a>
-          </li>
-          <li class="nav-item"> 
-            <a class="nav-link ">
-              <i class="fab fa-facebook-square"> </i> 
-              whatsapp</a>
-          </li>
-        </ul>
-    
-        <div class="wrapper">
-          <div class="footer-box">  
-            <div class="company-footer"> 
-              <h2>Mapa do Site <h2>
-              <h3>Quem nos somos:</h3>
-              <p> Registro de Ocorrências e</p>>
-            </div> 
-          </div>
-    
-          <div class="footer-box">  
-            <div class="service-footer"> 
-              <h2>Suporte e Serviço</h2>
-              
-               
-                <ul class=" footer-list footer-service-list">
-                  <li>
-                    <a href="#"> Visão Geral</a>
-                  </li>
-                  <li>
-                    <a href="#"> Ranking das Máquinas</a>
-                  </li>
-                  <li>
-                    <a href="#"> Últimas Ocorrências</a>
-                  </li>
-                </ul>
-            </div>
-            </div>
-            <div class="footer-box">
-              <h2>Nós sigam nas redes sociais </h2>
-              <ul class="footer-list">
-                <li>
-                  <a href="#"> 
-                    <i class="fab fa-facebook-square"> </i>
-                    <ion-icon name="logo-facebook"></ion-icon>
-                    <span>Facebook</span>
-    
-    
-                  </a>
-                </li>
-                <li>
-                  <a href="#"> 
-                   
-                    <ion-icon name="logo-instagram"></ion-icon>
-                    <i class="fab fa-instagram"> </i>
-                    <span>Intagram</span>
-    
-    
-                  </a>
-                </li>
-                <li>
-                  <a href="#"> 
-                    <ion-icon name="logo-whatsapp"></ion-icon>
-                    <i class="fab fa-facebook-square"> </i>
-                    <span>WhatsApp</span>
-    
-    
-                  </a>
-                </li>
-    
-    
-              </ul>  
-    
-            </div>
-          </div>
-            </div> 
-            <div class="footer-bottom">
-              <div class="wrapper">
-                <!--copyright-->
-                <i class="fas fa-copyright"></i>
-                <p> ROMME-NET</p>
-              </div>
-          </div>   
-
-
-
-    </footer> 
-
-    <!-- Gráfico de linhas - Quantidade corrências corretivas mensais -->
-    <script>
-      let ctx = document.getElementById('line-chart');
-      
-      let chart = new Chart(document.getElementById('line-chart'), {
-        type: 'line',
-        data: {
-          labels: [
-            'Jan',
-            'Fev',
-            'Mar',
-            'Abr',
-            'Mai',
-            'Jun',
-            'Ago',
-            'Set',
-            'Out',
-            'Nov',
-            'Dez',
-          ],
-          datasets: [
-            {
-              label: 'Gasto Anual com Ocorrências Corretivas',
-              data: [14, 21, 30, 17, 37, 33, 24, 19, 8, 0, 0],
-              backgroundColor: ['#396afc'],
-            },
-          ],
-        },
-      });
-    </script>
+    <!-- Gráfico de linhas - Quantidade ocorrências corretivas mensais -->
+    <script src="/scripts/dashboard.js"></script>
   </body>
 </html>
