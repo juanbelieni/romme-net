@@ -4,4 +4,10 @@
   background: -webkit-gradient(linear, left top, right top, from(#396afc), to(#2948ff));
   background: linear-gradient(to right, #396afc, #2948ff);
 }
+
+.line-chart {
+  width: 100%;
+  max-width: 50rem;
+  margin: auto;
+}
 /*# sourceMappingURL=dashboard.css.map */

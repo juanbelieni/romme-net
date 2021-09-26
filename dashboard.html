@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Dashboard | ROMME_Net</title>
-    <link rel="icon" href="images/icon.svg"type="image/svg+xml">
+    <link rel="icon" href="images/icon.svg" type="image/svg+xml" />
 
     <!-- Bootstrap CSS -->
     <link
@@ -25,6 +25,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Page CSS -->
     <link href="/styles/dashboard.css" rel="stylesheet" />
+
+    <!-- Chart Js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
   </head>
   <!-- ícones-->
   <script src="https://kit.fontawesome.com/695e6a8f13.js" crossorigin="anonymous"></script>
@@ -65,7 +68,9 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/occurrence_listing.html">Ocorrências</a>
+                <a class="nav-link" href="/occurrence_listing.html"
+                  >Ocorrências</a
+                >
               </li>
 
               <li class="nav-item dropdown">
@@ -112,24 +117,21 @@
 
         <!-- Avatar -->
         <div class="nav-item dropdown">
-
           <a
-          class="nav-link dropdown-toggle "
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
+            class="nav-link dropdown-toggle py-0"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
           >
             <div class="btn btn-primary rounded-circle">
-            <strong>C</strong>
+              <strong>C</strong>
             </div>
           </a>
 
-          <div class="dropdown-menu">
+          <div class="dropdown-menu dropdown-menu-end">
             <li><a class="dropdown-item" href="/avatar.html#sair">Sair</a></li>
           </div>
-
         </div>
-
       </div>
     </nav>
 
@@ -178,7 +180,7 @@
       </section>
 
       <!-- Ranking Máquinas com + despesa -->
-      <section class="container-xl py-4">
+      <section class="container-xl my-4">
         <div class="row gy-3">
           <div class="col-md-6">
             <div class="card">
@@ -315,6 +317,15 @@
           </div>
         </div>
       </section>
+
+      <!-- Gráfico de linha -->
+      <div class="container-xl mb-4">
+        <div class="card line-chart">
+          <div class="card-body">
+            <canvas id="line-chart"></canvas>
+          </div>
+        </div>
+      </div>
     </main>
 
     <!-- Bootstrap JS bundle -->
@@ -323,6 +334,7 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+
 
     <!--footer-->>
     <footer>
@@ -426,5 +438,36 @@
 
 
     </footer> 
+
+    <!-- Gráfico de linhas - Quantidade corrências corretivas mensais -->
+    <script>
+      let ctx = document.getElementById('line-chart');
+      
+      let chart = new Chart(document.getElementById('line-chart'), {
+        type: 'line',
+        data: {
+          labels: [
+            'Jan',
+            'Fev',
+            'Mar',
+            'Abr',
+            'Mai',
+            'Jun',
+            'Ago',
+            'Set',
+            'Out',
+            'Nov',
+            'Dez',
+          ],
+          datasets: [
+            {
+              label: 'Gasto Anual com Ocorrências Corretivas',
+              data: [14, 21, 30, 17, 37, 33, 24, 19, 8, 0, 0],
+              backgroundColor: ['#396afc'],
+            },
+          ],
+        },
+      });
+    </script>
   </body>
 </html>
