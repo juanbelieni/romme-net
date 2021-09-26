@@ -4,26 +4,20 @@ footer section h1 {
   margin-bottom: 1.6rem;
   text-transform: uppercase;
 }
-
 footer section ul {
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
-
 footer section ul li {
   margin-bottom: 0.4rem;
 }
-
 footer section ul li a {
   position: relative;
   text-decoration: none;
   color: #ddd;
-  -webkit-transition: color 250ms;
   transition: color 250ms;
 }
-
 footer section ul li a:hover {
   color: white;
-}
-/*# sourceMappingURL=footer.css.map */
+}/*# sourceMappingURL=footer.css.map */

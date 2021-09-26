@@ -1,8 +1,4 @@
-@mixin center-children {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@use "base" as *;
 
 #formulario-ocorrencia {
   max-width: 40rem;

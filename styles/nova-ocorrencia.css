@@ -6,33 +6,19 @@
 
 .adicionar-entrada button,
 .remover-entrada button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 24px;
   height: 24px;
 }
-
 .adicionar-entrada button i,
 .remover-entrada button i {
   font-size: 0.8rem;
 }
 
 .remover-entrada {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-/*# sourceMappingURL=nova-ocorrencia.css.map */
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=nova-ocorrencia.css.map */

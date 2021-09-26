@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ocorrências | ROMME_Net</title>
+    <link rel="icon" href="/imagens/icone.svg" type="image/svg+xml" />
+
+    <!-- CSS do Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- Ícones do Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!-- CSS da página -->
+    <link rel="stylesheet" href="/styles/ocorrencias.css" />
+
+    <!-- CSS do footer-->
+    <link rel="stylesheet" href="/styles/footer.css" />
+  </head>
+
+  <body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <div class="container-xl">
+        <button
+          class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbar-menu"
+        >
+          <span class="navbar-toggler-icon fs-6"></span>
+        </button>
+
+        <a class="navbar-brand me-auto" href="#">
+          <img src="/imagens/logo.svg" alt="Logo da ROMME_Net" height="27" />
+        </a>
+
+        <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">ROMME_net</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
+              <li class="nav-item">
+                <a class="nav-link active" href="/dashboard.html">Dashboard</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/ocorrencias.html">
+                  Ocorrências
+                </a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Outros
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/materias.html">Materiais</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/maquinas.html">Máquinas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/prestadores.html">
+                      Prestadores
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/servicos.html">Serviços</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/usuarios.html">Usuários</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" href="/nova-ocorrencia.html">
+          Nova ocorrência
+        </a>
+
+        <div class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle py-0"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            <div class="btn btn-primary rounded-circle">
+              <strong>C</strong>
+            </div>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Sair</a></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container-xl">
+        <!-- "Lista de ocorrências" -->
+        <div class="container-xl">
+          <div class="table-responsive">
+            <div class="table-wrapper">
+              <div class="table-title">
+                <div class="row">
+                  <div class="col">
+                    <h2>Lista de <b>registros</b></h2>
+                  </div>
+
+                  <!-- "PESQUISA AQUIIII" -->
+
+                  <div class="col-md-auto">
+                    <select
+                      class="form-select"
+                      aria-label="Default select example"
+                    >
+                      <option selected>Buscar por:</option>
+                      <option value="1">Data</option>
+                      <option value="2">Número do registro</option>
+                    </select>
+                  </div>
+
+                  <div class="col col-lg-2">
+                    <div class="form-control">
+                      <i class="bi bi-search"></i>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Buscar"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <table class="table table-striped table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Data<i class="fa fa-sort"></i></th>
+                    <th>Máquina<i class="fa fa-sort"></i></th>
+                    <th>Categoria<i class="fa fa-sort"></i></th>
+                    <th>Descrição<i class="fa fa-sort"></i></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>27/09/2021</td>
+                    <td>Envasadoris</td>
+                    <td>Pneumatiquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <button
+                        class="text-primary"
+                        style="
+                          background: transparent;
+                          outline: 0;
+                          border: none;
+                        "
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                      >
+                        <i class="bi bi-eye"></i>
+                      </button>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div class="modal-dialog modal-xl">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">
+                                Detalhes da Ocorrência
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Fechar"
+                              ></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>ID: 12345678902</p>
+                              <p>Data: 27/09/2021</p>
+                              <p>Manutenção de tipo: Preventiva</p>
+                              <ul
+                                class="nav nav-tabs"
+                                id="myTab"
+                                role="tablist"
+                              >
+                                <li class="nav-item" role="presentation">
+                                  <button
+                                    class="nav-link active"
+                                    id="descricao-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#descricao"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="descricao"
+                                    aria-selected="true"
+                                  >
+                                    Descrição
+                                  </button>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                  <button
+                                    class="nav-link"
+                                    id="materiais-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#materiais"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="materiais"
+                                    aria-selected="false"
+                                  >
+                                    Materiais
+                                  </button>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                  <button
+                                    class="nav-link"
+                                    id="custos-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#custos"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="custos"
+                                    aria-selected="false"
+                                  >
+                                    Custos
+                                  </button>
+                                </li>
+
+                                <li class="nav-item" role="presentation">
+                                  <button
+                                    class="nav-link"
+                                    id="servicos-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#servicos"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="servicos"
+                                    aria-selected="false"
+                                  >
+                                    Serviços
+                                  </button>
+                                </li>
+                              </ul>
+                              <div class="tab-content" id="myTabContent">
+                                <div
+                                  class="tab-pane fade show active"
+                                  id="descricao"
+                                  role="tabpanel"
+                                  aria-labelledby="descricao-tab"
+                                >
+                                  Mussum Ipsum, cacilds vidis litro abertis.
+                                  Leite de capivaris, leite de mula manquis sem
+                                  cabeça. Tá deprimidis, eu conheço uma cachacis
+                                  que pode alegrar sua vidis. Casamentiss faiz
+                                  malandris se pirulitá. Suco de cevadiss, é um
+                                  leite divinis, qui tem lupuliz, matis, aguis e
+                                  fermentis. Viva Forevis aptent taciti sociosqu
+                                  ad litora torquent. Não sou faixa preta
+                                  cumpadi, sou preto inteiris, inteiris.
+                                  Delegadis gente finis, bibendum egestas augue
+                                  arcu ut est. Admodum accumsan disputationi eu
+                                  sit. Vide electram sadipscing et per. In
+                                  elementis mé pra quem é amistosis quis leo. Si
+                                  u mundo tá muito paradis? Toma um mé que o
+                                  mundo vai girarzis! Nec orci ornare consequat.
+                                  Praesent lacinia ultrices consectetur. Sed non
+                                  ipsum felis. Detraxit consequat et quo num
+                                  tendi nada. Todo mundo vê os porris que eu
+                                  tomo, mas ninguém vê os tombis que eu levo!
+                                  Nullam volutpat risus nec leo commodo, ut
+                                  interdum diam laoreet. Sed non consequat odio.
+                                  Per aumento de cachacis, eu reclamis. Aenean
+                                  aliquam molestie leo, vitae iaculis nisl. A
+                                  ordem dos tratores não altera o pão duris.
+                                  Diuretics paradis num copo é motivis de
+                                  denguis. Sapien in monti palavris qui num
+                                  significa nadis i pareci latim. Si num tem
+                                  leite então bota uma pinga aí cumpadi! Quem
+                                  num gosta di mé, boa gentis num é.
+                                </div>
+
+                                <div
+                                  class="tab-pane fade"
+                                  id="materiais"
+                                  role="tabpanel"
+                                  aria-labelledby="materiais-tab"
+                                >
+                                  <!--COMEÇA LISTALISTA-->
+                                  <table
+                                    class="
+                                      table
+                                      table-striped
+                                      table-hover
+                                      table-bordered
+                                    "
+                                  >
+                                    <thead>
+                                      <tr>
+                                        <th>Nome<i class="fa fa-sort"></i></th>
+                                        <th>
+                                          Categoria<i class="fa fa-sort"></i>
+                                        </th>
+                                        <th>
+                                          Quantidade<i class="fa fa-sort"></i>
+                                        </th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      <tr>
+                                        <td>Fita isolante</td>
+                                        <td>Elétrica</td>
+                                        <td>5</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Fita hellermann</td>
+                                        <td>Geral</td>
+                                        <td>1</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Broca 3mm</td>
+                                        <td>Mecânica</td>
+                                        <td>5</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Porca M8</td>
+                                        <td>Mecânica</td>
+                                        <td>20</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Parafuso M8 X 40mm</td>
+                                        <td>Mecânica</td>
+                                        <td>20</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+
+                                <!--TERMINA LISTALISTA-->
+
+                                <div
+                                  class="tab-pane fade"
+                                  id="custos"
+                                  role="tabpanel"
+                                  aria-labelledby="custos-tab"
+                                >
+                                  <!--COMEÇA LISTALISTA-->
+                                  <table
+                                    class="
+                                      table
+                                      table-striped
+                                      table-hover
+                                      table-bordered
+                                    "
+                                  >
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          Serviço<i class="fa fa-sort"></i>
+                                        </th>
+                                        <th>
+                                          Material<i class="fa fa-sort"></i>
+                                        </th>
+                                        <th>Total<i class="fa fa-sort"></i></th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      <tr>
+                                        <td>R$ 300,00</td>
+                                        <td>R$ 50,00</td>
+                                        <td>R$ 350,00</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                                  <!--TERMINA LISTALISTA-->
+                                </div>
+
+                                <div
+                                  class="tab-pane fade"
+                                  id="servicos"
+                                  role="tabpanel"
+                                  aria-labelledby="servicos-tab"
+                                >
+                                  <!--COMEÇA LISTALISTA-->
+                                  <table
+                                    class="
+                                      table
+                                      table-striped
+                                      table-hover
+                                      table-bordered
+                                    "
+                                  >
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          Serviço<i class="fa fa-sort"></i>
+                                        </th>
+                                        <th>
+                                          Prestador<i class="fa fa-sort"></i>
+                                        </th>
+                                        <th>Custo<i class="fa fa-sort"></i></th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                      <tr>
+                                        <td>Tornearia</td>
+                                        <td>Antônio de Souza</td>
+                                        <td>R$ 800,00</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Fresagem</td>
+                                        <td>Roberto Cardoso</td>
+                                        <td>R$ 600,00</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Soldagem</td>
+                                        <td>Roberval da Silva</td>
+                                        <td>R$ 700,00</td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>Eletricista</td>
+                                        <td>Cláudio Fernandes</td>
+                                        <td>R$ 300,00</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Manutenção de caldeira</td>
+                                        <td>Carlos Oliveira</td>
+                                        <td>R$ 600,00</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                                  <!--TERMINA LISTALISTA-->
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Fechar
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>25/02/2015</td>
+                    <td>Extrusora</td>
+                    <td>Mecânica</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="Expandir"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>25/02/2015</td>
+                    <td>Montadora de Grampos</td>
+                    <td>Elétrica</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="Expandir"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>25/02/2015</td>
+                    <td>Extrusoris</td>
+                    <td>Eletriquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="Expandir"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>27/09/2021</td>
+                    <td>Extrusoris</td>
+                    <td>Pneumatiquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="View"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Edit"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>27/09/2021</td>
+                    <td>Envasadoris</td>
+                    <td>Pneumatiquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="Expandir"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>27/09/2021</td>
+                    <td>Extrusoris</td>
+                    <td>Mecaniquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="Expandir"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>27/09/2021</td>
+                    <td>Montadoris de Grampis</td>
+                    <td>Eletriquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="Expandir"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>27/09/2021</td>
+                    <td>Extrusoris</td>
+                    <td>Eletriquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="Expandir"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Editar"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>27/09/2021</td>
+                    <td>Extrusoris</td>
+                    <td>Pneumatiquis</td>
+                    <td class="text-truncate">
+                      Mussum Ipsum, cacilds vidis litro abertis. Vehicula non.
+                      Ut sed ex eros. Vivamus sit amet nibh non tellus tristique
+                      interdum. Si num tem leite então bota uma pinga aí
+                      cumpadi! Sapien in monti palavris qui num significa nadis
+                      i pareci latim. Interessantiss quisso pudia ce receita de
+                      bolis, mais bolis eu num gostis.
+                    </td>
+
+                    <td>
+                      <a
+                        href="#"
+                        class="view"
+                        title="View"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-eye"></i
+                      ></a>
+                      <a
+                        href="#"
+                        class="edit"
+                        title="Edit"
+                        data-toggle="tooltip"
+                        ><i class="bi bi-pencil"></i
+                      ></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="clearfix">
+                <div class="hint-text">
+                  Mostrando <b>10</b> de <b>500</b> registros
+                </div>
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a href="#"><i class="bi bi-arrow-left"></i></a>
+                  </li>
+                  <li class="page-item">
+                    <a href="#" class="page-link"
+                      ><i class="bi bi-arrow-right"></i
+                    ></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="flex py-2 bg-primary text-light">
+        <div class="container-lg d-flex align-items-center">
+          <span class="fw-bold me-auto">Entre em contato com a gente!</span>
+
+          <i class="bi bi-facebook ms-4"></i>
+          <i class="bi bi-twitter ms-4"></i>
+          <i class="bi bi-instagram ms-4"></i>
+          <i class="bi bi-github ms-4"></i>
+        </div>
+      </div>
+
+      <div class="bg-dark text-white py-4">
+        <div class="container-lg my-3">
+          <div class="row gy-4">
+            <section class="col-sm-5">
+              <h1>ROMME_Net</h1>
+
+              <p class="text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                auctor eleifend nisl, ut pellentesque urna. Suspendisse rutrum
+                augue ultrices, cursus libero sed, tincidunt erat. Ut aliquet
+                rhoncus tristique.
+              </p>
+
+              <p style="color: #ddd">&copy;2021</p>
+            </section>
+
+            <section class="col-sm">
+              <h1>Serviços e Suporte</h1>
+
+              <ul>
+                <li><a href="#">Visão Geral</a></li>
+                <li><a href="#">Perguntas frequentes</a></li>
+                <li><a href="#">Suporte especializado</a></li>
+                <li><a href="#">Ajuda</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Privacidade</h1>
+
+              <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Sobre</h1>
+
+              <ul>
+                <li><a href="#">Sobre a empresa</a></li>
+                <li><a href="#">Quem somos?</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
