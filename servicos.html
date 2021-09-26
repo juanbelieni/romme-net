@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Serviços | ROMME_Net</title>
+    <link rel="icon" href="/imagens/icone.svg" type="image/svg+xml" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- CSS do Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <!-- Ícones do Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!-- CSS da página -->
+    <link rel="stylesheet" href="/styles/ocorrencias.css" />
+
+    <!-- CSS do footer-->
+    <link rel="stylesheet" href="/styles/footer.css" />
+  </head>
+
+  <body class="bg-light d-flex flex-column" style="height: 100vh;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+      <div class="container-xl">
+        <button
+          class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#navbar-menu"
+        >
+          <span class="navbar-toggler-icon fs-6"></span>
+        </button>
+
+        <a class="navbar-brand me-auto" href="#">
+          <img src="/imagens/logo.svg" alt="Logo da ROMME_Net" height="27" />
+        </a>
+
+        <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">ROMME_net</h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
+              <li class="nav-item">
+                <a class="nav-link" href="/dashboard.html">Dashboard</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="/ocorrencias.html"> Ocorrências </a>
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link active dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Outros
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/materiais.html">
+                      Materiais
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/maquinas.html">Máquinas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/prestadores.html">
+                      Prestadores
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item active" href="/servicos.html"
+                      >Serviços</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/usuarios.html">Usuários</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="btn btn-primary" href="/nova-ocorrencia.html">
+          Nova ocorrência
+        </a>
+
+        <div class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle py-0"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            <div class="btn btn-primary rounded-circle">
+              <strong>C</strong>
+            </div>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Sair</a></li>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container-xl">
+      <!-- "Lista de ocorrências" -->
+      <div class="container-xl">
+        <div class="table-responsive">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <div class="row">
+                <div class="col">
+                  <h2>Lista de <b>Serviços</b></h2>
+                </div>
+
+                <div class="col-md-auto">
+                  <!-- gambiarra -->
+                </div>
+
+                <div class="col col-lg-2">
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal1"
+                  >
+                    Cadastrar serviço
+                  </button>
+
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="exampleModal1"
+                    tabindex="-1"
+                    aria-labelledby="exampleModal1Label"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModal1Label">
+                            Cadastrar nova máquina
+                          </h5>
+                          <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Fechar"
+                          ></button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- cadastro de nova maquina -->
+                          <div>
+                            <form id="formulario-ocorrencia" class="card">
+                              <div class="card-header fs-4 fw-bold">
+                                Novo serviço
+                              </div>
+
+                              <div class="card-body">
+                                <div class="mb-3">
+                                  <label for="tempo-parado" class="form-label"
+                                    >Nome</label
+                                  >
+                                  <input
+                                    class="form-control"
+                                    id="nome"
+                                    name="nome"
+                                    rows="3"
+                                    required
+                                  />
+                                </div>
+
+                                <hr />
+
+                                <button type="submit" class="btn btn-primary">
+                                  Registrar
+                                </button>
+                              </div>
+                            </form>
+                          </div>
+
+                          <!-- \\cadastro de nova maquina -->
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                          >
+                            Fechar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <table class="table table-striped table-hover table-bordered">
+              <thead>
+                <tr>
+                  <th>Serviço</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tornearia</td>
+                </tr>
+
+                <tr>
+                  <td>Fresagem</td>
+                </tr>
+
+                <tr>
+                  <td>Soldagem</td>
+                </tr>
+
+                <tr>
+                  <td>Pintura</td>
+                </tr>
+
+                <tr>
+                  <td>Eletrecista</td>
+                </tr>
+
+                <tr>
+                  <td>Jateamento</td>
+                </tr>
+
+                <tr>
+                  <td>Rebobinamento</td>
+                </tr>
+
+                <tr>
+                  <td>Manutenção de caldeira</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto">
+      <div class="flex py-2 bg-primary text-light">
+        <div class="container-lg d-flex align-items-center">
+          <span class="fw-bold me-auto">Entre em contato com a gente!</span>
+
+          <i class="bi bi-facebook ms-4"></i>
+          <i class="bi bi-twitter ms-4"></i>
+          <i class="bi bi-instagram ms-4"></i>
+          <i class="bi bi-github ms-4"></i>
+        </div>
+      </div>
+
+      <div class="bg-dark text-white py-4">
+        <div class="container-lg my-3">
+          <div class="row gy-4">
+            <section class="col-sm-5">
+              <h1>ROMME_Net</h1>
+
+              <p class="text-white">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                auctor eleifend nisl, ut pellentesque urna. Suspendisse rutrum
+                augue ultrices, cursus libero sed, tincidunt erat. Ut aliquet
+                rhoncus tristique.
+              </p>
+
+              <p style="color: #ddd">&copy;2021</p>
+            </section>
+
+            <section class="col-sm">
+              <h1>Serviços e Suporte</h1>
+
+              <ul>
+                <li><a href="#">Visão Geral</a></li>
+                <li><a href="#">Perguntas frequentes</a></li>
+                <li><a href="#">Suporte especializado</a></li>
+                <li><a href="#">Ajuda</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Privacidade</h1>
+
+              <ul>
+                <li><a href="#">Termos de uso</a></li>
+                <li><a href="#">Política de privacidade</a></li>
+              </ul>
+            </section>
+
+            <section class="col-sm">
+              <h1>Sobre</h1>
+
+              <ul>
+                <li><a href="#">Sobre a empresa</a></li>
+                <li><a href="#">Quem somos?</a></li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

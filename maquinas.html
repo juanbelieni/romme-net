@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ocorrências</title>
+    <title>Máquinas | ROMME_Net</title>
+    <link rel="icon" href="/imagens/icone.svg" type="image/svg+xml" />
 
-    <!-- Bootstrap CSS -->
+    <!-- CSS do Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,21 +16,23 @@
       crossorigin="anonymous"
     />
 
-    <!-- Bootstrap icons -->
+    <!-- Ícones do Bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
 
-    <!-- Page CSS -->
-    <link href="styles/ocorrencias.css" rel="stylesheet" />
+    <!-- CSS da página -->
+    <link rel="stylesheet" href="/styles/ocorrencias.css" />
+
+    <!-- CSS do footer-->
+    <link rel="stylesheet" href="/styles/footer.css" />
   </head>
 
   <body class="bg-light">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div class="container-xl">
-        <!-- Menu button -->
         <button
           class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0"
           type="button"
@@ -39,12 +42,10 @@
           <span class="navbar-toggler-icon fs-6"></span>
         </button>
 
-        <!-- Brand -->
         <a class="navbar-brand me-auto" href="#">
           <img src="/imagens/logo.svg" alt="Logo da ROMME_Net" height="27" />
         </a>
 
-        <!-- Menu -->
         <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title">ROMME_net</h5>
@@ -58,45 +59,43 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
               <li class="nav-item">
-                <a class="nav-link active" href="/dashboard.html">Dashboard</a>
+                <a class="nav-link" href="/dashboard.html">Dashboard</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="/ocorrencias.html"
-                  >Ocorrências</a
-                >
+                <a class="nav-link" href="/ocorrencias.html"> Ocorrências </a>
               </li>
 
               <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
+                  class="nav-link active dropdown-toggle"
                   href="#"
                   role="button"
                   data-bs-toggle="dropdown"
                 >
-                  Geral
+                  Outros
                 </a>
 
                 <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item" href="/geral.html#materias"
-                      >Materiais</a
-                    >
+                    <a class="dropdown-item" href="/materiais.html">
+                      Materiais
+                    </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/geral.html#maquinas"
-                      >Máquinas</a
-                    >
+                    <a class="dropdown-item active" href="/maquinas.html">Máquinas</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/geral.html#prestadores"
-                      >Prestadores</a
-                    >
+                    <a class="dropdown-item" href="/prestadores.html">
+                      Prestadores
+                    </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/geral.html#servicos"
-                      >Serviços</a
-                    >
+                    <a class="dropdown-item" href="/servicos.html">Serviços</a>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="/usuarios.html">Usuários</a>
                   </li>
                 </ul>
               </li>
@@ -104,12 +103,29 @@
           </div>
         </div>
 
-        <!-- "Nova ocorrência" -->
-        <a class="btn btn-primary" href="/nova-ocorrencia.html"
-          >Nova ocorrência</a
-        >
+        <a class="btn btn-primary" href="/nova-ocorrencia.html">
+          Nova ocorrência
+        </a>
+
+        <div class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle py-0"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+          >
+            <div class="btn btn-primary rounded-circle">
+              <strong>C</strong>
+            </div>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Sair</a></li>
+          </div>
+        </div>
       </div>
     </nav>
+
 
     <main>
       <div class="container-xl" id="find_oc_box">
@@ -547,6 +563,68 @@
           </div>
       </div>
     </main>
+
+        <!-- Footer -->
+        <footer class="mt-auto">
+          <div class="flex py-2 bg-primary text-light">
+            <div class="container-lg d-flex align-items-center">
+              <span class="fw-bold me-auto">Entre em contato com a gente!</span>
+    
+              <i class="bi bi-facebook ms-4"></i>
+              <i class="bi bi-twitter ms-4"></i>
+              <i class="bi bi-instagram ms-4"></i>
+              <i class="bi bi-github ms-4"></i>
+            </div>
+          </div>
+    
+          <div class="bg-dark text-white py-4">
+            <div class="container-lg my-3">
+              <div class="row gy-4">
+                <section class="col-sm-5">
+                  <h1>ROMME_Net</h1>
+    
+                  <p class="text-white">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
+                    auctor eleifend nisl, ut pellentesque urna. Suspendisse rutrum
+                    augue ultrices, cursus libero sed, tincidunt erat. Ut aliquet
+                    rhoncus tristique.
+                  </p>
+    
+                  <p style="color: #ddd">&copy;2021</p>
+                </section>
+    
+                <section class="col-sm">
+                  <h1>Serviços e Suporte</h1>
+    
+                  <ul>
+                    <li><a href="#">Visão Geral</a></li>
+                    <li><a href="#">Perguntas frequentes</a></li>
+                    <li><a href="#">Suporte especializado</a></li>
+                    <li><a href="#">Ajuda</a></li>
+                  </ul>
+                </section>
+    
+                <section class="col-sm">
+                  <h1>Privacidade</h1>
+    
+                  <ul>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Política de privacidade</a></li>
+                  </ul>
+                </section>
+    
+                <section class="col-sm">
+                  <h1>Sobre</h1>
+    
+                  <ul>
+                    <li><a href="#">Sobre a empresa</a></li>
+                    <li><a href="#">Quem somos?</a></li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </div>
+        </footer>
 
     <!-- Bootstrap JS bundle -->
     <script

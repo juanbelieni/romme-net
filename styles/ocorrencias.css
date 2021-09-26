@@ -34,7 +34,8 @@ body {
   font-size: 22px;
 }
 
-table.table tr th, table.table tr td {
+table.table tr th,
+table.table tr td {
   border-color: #f5f5f5;
   width: -webkit-min-content;
   width: -moz-min-content;
@@ -67,13 +68,13 @@ table table td a {
   margin: 0 5px;
 }
 table table td a.view {
-  color: #03A9F4;
+  color: #03a9f4;
 }
 table table td a.edit {
-  color: #FFC107;
+  color: #ffc107;
 }
 table table td a.delete {
-  color: #E34724;
+  color: #e34724;
 }
 
 table.table td i {
@@ -106,7 +107,7 @@ table.table td i {
 }
 
 .search-box input:focus {
-  border-color: #3FBAE4;
+  border-color: #3fbae4;
 }
 
 .search-box i {
@@ -144,7 +145,7 @@ table.table td i {
   padding-top: 6px;
 }
 .pagination li.active a {
-  background: #03A9F4;
+  background: #03a9f4;
 }
 .pagination li.active a a:hover {
   background: #0397d6;
