@@ -1,18 +1,4 @@
-#page-item {
-  margin-top: 100px;
-}
-
-#card {
-  padding: 10px;
-}
-
-body {
-  color: #566787;
-  background: #f5f5f5;
-  font-family: "Roboto", sans-serif;
-}
-
-/* TABLE ================================================================================= */
+/* table */
 .table-responsive {
   margin: 30px 0;
 }
@@ -34,10 +20,11 @@ body {
   font-size: 22px;
 }
 
-table.table tr th,
-table.table tr td {
+table.table tr th, table.table tr td {
   border-color: #f5f5f5;
-  width: 100%;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
   white-space: nowrap;
   max-width: 500px;
 }
@@ -66,13 +53,13 @@ table table td a {
   margin: 0 5px;
 }
 table table td a.view {
-  color: #03a9f4;
+  color: #03A9F4;
 }
 table table td a.edit {
-  color: #ffc107;
+  color: #FFC107;
 }
 table table td a.delete {
-  color: #e34724;
+  color: #E34724;
 }
 
 table.table td i {
@@ -89,35 +76,8 @@ table.table td i {
     line-break:auto;
 }
 */
-/* END TABLE ================================================================================= */
-/* SEARCH BOX================================================================================= */
-.search-box {
-  position: relative;
-  float: right;
-}
-
-.search-box input {
-  height: 34px;
-  border-radius: 20px;
-  padding-left: 35px;
-  border-color: #f5f5f5;
-  box-shadow: none;
-}
-
-.search-box input:focus {
-  border-color: #3fbae4;
-}
-
-.search-box i {
-  color: #ddd;
-  position: absolute;
-  font-size: 19px;
-  top: 8px;
-  left: 10px;
-}
-
-/* END SEARCH BOX================================================================================= */
-/* PAGINATION ================================================================================= */
+/* \\table */
+/* pagination */
 .pagination {
   float: right;
   margin: 0 0 5px;
@@ -143,7 +103,7 @@ table.table td i {
   padding-top: 6px;
 }
 .pagination li.active a {
-  background: #03a9f4;
+  background: #03A9F4;
 }
 .pagination li.active a a:hover {
   background: #0397d6;
@@ -152,22 +112,4 @@ table.table td i {
   color: #f5f5f5;
 }
 
-/* END PAGINATION ================================================================================= */
-.hint-text {
-  float: left;
-  margin-top: 6px;
-  font-size: 95%;
-}
-
-.form-control {
-  display: flex;
-  align-items: center;
-}
-
-.bi-search {
-  margin-right: 10px;
-}
-
-.tab-content {
-  line-break: auto;
-}/*# sourceMappingURL=ocorrencias.css.map */
+/* \\pagination *//*# sourceMappingURL=maquinas.css.map */
