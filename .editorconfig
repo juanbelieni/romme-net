@@ -1,0 +1,13 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Indent size of 2 spaces for all files
+[*]
+indent_style = space
+indent_size = 2
+
+# Indent size of 4 spaces for python files
+[*.py]
+indent_size = 4
