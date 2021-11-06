@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 django = "*"
+django-compressor = "*"
+django-libsass = "*"
 
 [dev-packages]
 
