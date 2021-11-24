@@ -1,0 +1,86 @@
+{% load static %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+  <div class="container-xl">
+    <button class="navbar-toggler me-3 border-white shadow-none ps-2 pe-0" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#navbar-menu">
+      <span class="navbar-toggler-icon fs-6"></span>
+    </button>
+
+    <a class="navbar-brand me-auto" href="#">
+      <img src=" {% static 'images/logo.svg' %} " alt="Logo da ROMME_Net" height="27" />
+    </a>
+
+    <div class="offcanvas offcanvas-start" id="navbar-menu" tabindex="-1">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">ROMME_net</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 me-3">
+          <li class="nav-item">
+            <a class="nav-link {% if tab == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}">
+              Dashboard
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/ocorrencias.html">
+              Ocorrências
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            {% with 'machines provider' as other_tabs %}
+            <a class="nav-link dropdown-toggle {% if tab in other_tabs.split %}active{% endif %}" href="#" href="#"
+              role="button" data-bs-toggle="dropdown">
+              Outros
+            </a>
+            {% endwith %}
+
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="/materiais.html">Materiais</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/maquinas.html">Máquinas</a>
+              </li>
+              <li>
+                <a class="dropdown-item {% if tab == 'provider' %}active{% endif %}" href="{% url 'provider-list' %}">
+                  Prestadores
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="/servicos.html">Serviços</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <a class="dropdown-item" href="/usuarios.html">Usuários</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="btn btn-primary" href="/nova-ocorrencia.html">
+      Nova ocorrência
+    </a>
+
+    <div class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle py-0" href="#" role="button" data-bs-toggle="dropdown">
+        <div class="btn btn-primary rounded-circle">
+          <strong>C</strong>
+        </div>
+      </a>
+
+      <div class="dropdown-menu dropdown-menu-end">
+        <a class="dropdown-item" href="#">Sair</a>
+      </div>
+    </div>
+  </div>
+</nav>

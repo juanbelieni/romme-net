@@ -3,11 +3,15 @@
 
 {% block title %}Dashboard{% endblock title %}
 
-{% block scss %}
+{% comment %} {% block scss %}
 <link href="{% static 'scss/dashboard.scss' %}" rel="stylesheet" type="text/x-scss" />
-{% endblock scss %}
+{% endblock scss %} {% endcomment %}
 
 {% block content %}
+{% with tab="dashboard" %}
+{% include "navbar.html" %}
+{% endwith %}
+
 <main>
   <h1>Dashboard</h1>
 </main>

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pretadores{% endblock title %}
+
+{% block content %}
+{% with tab="provider" %}
+{% include "navbar.html" %}
+{% endwith %}
+
+<main class="container p-4">
+  <h1>Lista</h1>
+</main>
+
+{% endblock content %}
