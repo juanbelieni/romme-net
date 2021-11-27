@@ -8,8 +8,38 @@
 {% include "navbar.html" %}
 {% endwith %}
 
-<main class="container p-4">
-  <h1>Lista</h1>
+<main class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h1 class="h4 mb-0">Pretadores</h1>
+
+    <!-- Create Button -->
+    <a href="{% url 'provider-create' %}" class="btn btn-primary">
+      <i class="bi-plus-lg me-1"></i>
+      <span>Novo</span>
+    </a>
+  </div>
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Endereço</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for provider in providers %}
+      <tr>
+        <th scope="row">{{ provider.id }}</th>
+        <td>{{ provider.name }}</td>
+        <td>{{ provider.phone }}</td>
+        <td>{{ provider.address }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
 </main>
 
 {% endblock content %}
