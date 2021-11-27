@@ -13,8 +13,7 @@
     <h1 class="h4 mb-0">Pretadores</h1>
 
     <!-- Create Button -->
-    <a href="{% url 'provider-create' %}" class="btn btn-primary">
-      <i class="bi-plus-lg me-1"></i>
+    <a href="{% url 'provider-create' %}" class="btn btn-sm btn-primary">
       <span>Novo</span>
     </a>
   </div>
@@ -27,6 +26,7 @@
         <th scope="col">Nome</th>
         <th scope="col">Telefone</th>
         <th scope="col">Endereço</th>
+        <th scope="col">Ações</th>
       </tr>
     </thead>
 
@@ -37,6 +37,16 @@
         <td>{{ provider.name }}</td>
         <td>{{ provider.phone }}</td>
         <td>{{ provider.address }}</td>
+        <td>
+          <div class="btn-group" role="group">
+            <a href="{% url 'provider-update' provider.id %}" class="btn btn-sm btn-primary">
+              <span>Editar</span>
+            </a>
+            <a href="{% url 'provider-delete' provider.id %}" class="btn btn-sm btn-danger">
+              <span>Excluir</span>
+            </a>
+          </div>
+        </td>
       </tr>
       {% endfor %}
     </tbody>

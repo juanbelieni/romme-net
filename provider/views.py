@@ -33,3 +33,43 @@ def provider_create(request):
         form = ProviderForm()
 
     return render(request, "provider/create.html", {"form": form})
+
+
+# View: update
+# Description: update a provider
+def provider_update(request, id):
+    if request.method == "POST":
+        form = ProviderForm(request.POST)
+
+        if form.is_valid():
+            data = form.cleaned_data
+            provider = Provider.objects.get(id=id)
+
+            provider.name = data["name"]
+            provider.phone = data["phone"]
+            provider.address = data["address"]
+
+            provider.save()
+
+            return HttpResponseRedirect(reverse("provider-list"))
+
+    else:
+        provider = Provider.objects.get(id=id)
+        form = ProviderForm(
+            initial={
+                "name": provider.name,
+                "phone": provider.phone,
+                "address": provider.address,
+            }
+        )
+
+    return render(request, "provider/update.html", {"id": id, "form": form})
+
+
+# View: delete
+# Description: delete a provider
+def provider_delete(request, id):
+    provider = Provider.objects.get(id=id)
+    provider.delete()
+
+    return HttpResponseRedirect(reverse("provider-list"))

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Editar prestador{% endblock title %}
+
+{% block content %}
+{% with tab="provider" %}
+{% include "navbar.html" %}
+{% endwith %}
+
+<main class="container py-4">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="h4">Editar prestador</h4>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group mb-3">
+          <label for="provider_id">ID</label>
+          <input type="text" class="form-control" id="provider_id" value="{{ id }}" disabled>
+        </div>
+
+        {{ form }}
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+  const phoneElement = document.querySelector('#{{ form.phone.id_for_label }}');
+  const mask = IMask(phoneElement, {
+    mask: [{
+      mask: '(00) 0000-0000'
+    }, {
+      mask: '(00) 00000-0000'
+    }],
+  });
+</script>
+{% endblock scripts %}
