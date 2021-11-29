@@ -1,21 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Novo prestador{% endblock title %}
+{% block title %}Editar serviço{% endblock title %}
 
 {% block content %}
-{% with tab="provider" %}
+{% with tab="service" %}
 {% include "navbar.html" %}
 {% endwith %}
 
 <main class="container-xl py-4">
   <div class="card mx-auto" style="max-width: 32rem">
     <div class="card-header">
-      <h1 class="h4">Novo prestador</h4>
+      <h1 class="h4">Editar serviço</h4>
     </div>
     <div class="card-body">
       <form method="post">
         {% csrf_token %}
+
+        <div class="form-group mb-3">
+          <label for="provider_id">ID</label>
+          <input type="text" class="form-control" id="provider_id" value="{{ id }}" disabled>
+        </div>
 
         {{ form }}
 

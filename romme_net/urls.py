@@ -24,6 +24,8 @@ urlpatterns = [
     path("", views.dashboard, name="dashboard"),
     # Provider views
     path("prestadores/", include("provider.urls")),
+    # Service views
+    path("servicos/", include("service.urls")),
     # Static files
     *staticfiles_urlpatterns(),
 ]

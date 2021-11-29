@@ -33,7 +33,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            {% with 'machines provider' as other_tabs %}
+            {% with 'machines provider service' as other_tabs %}
             <a class="nav-link dropdown-toggle {% if tab in other_tabs.split %}active{% endif %}" href="#" href="#"
               role="button" data-bs-toggle="dropdown">
               Outros
@@ -53,7 +53,8 @@
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="/servicos.html">Serviços</a>
+                <a class="dropdown-item {% if tab == 'service' %}active{% endif %}"
+                  href="{% url 'service-list' %}">Serviços</a>
               </li>
               <li>
                 <hr class="dropdown-divider" />

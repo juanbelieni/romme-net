@@ -7,7 +7,7 @@ from .models import Provider
 # View: list
 # Description: list all providers
 def provider_list(request):
-    providers = Provider.objects.all()
+    providers = Provider.objects.order_by("id")
     return render(request, "provider/list.html", {"providers": providers})
 
 
