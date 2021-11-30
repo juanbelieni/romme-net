@@ -44,9 +44,13 @@
               <li>
                 <a class="dropdown-item" href="/materiais.html">Materiais</a>
               </li>
+
               <li>
-                <a class="dropdown-item" href="/maquinas.html">Máquinas</a>
+                <a class="dropdown-item {% if tab == 'machines' %}active{% endif %}" href="{% url 'machines-list' %}">
+                  Máquinas
+                </a>
               </li>
+
               <li>
                 <a class="dropdown-item {% if tab == 'provider' %}active{% endif %}" href="{% url 'provider-list' %}">
                   Prestadores
