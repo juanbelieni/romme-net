@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "compressor",
     "provider",
     "service",
+    "machines",
 ]
 
 MIDDLEWARE = [

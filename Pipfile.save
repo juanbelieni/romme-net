@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "~=3.2.9"
+django-compressor = "*"
+django-libsass = "*"
+gunicorn = "*"
+python-dotenv = "*"
+psycopg2-binary = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3"
+
+[pipenv]
+allow_prereleases = true

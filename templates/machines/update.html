@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Editar máquina{% endblock title %}
+
+{% block content %}
+{% with tab="machines" %}
+{% include "navbar.html" %}
+{% endwith %}
+
+<main class="container-xl py-4">
+  <div class="card mx-auto" style="max-width: 32rem">
+    <div class="card-header">
+      <h1 class="h4">Editar máquina</h4>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group mb-3">
+          <label for="machines_id">ID</label>
+          <input type="text" class="form-control" id="machines_id" value="{{ id }}" disabled>
+        </div>
+
+        {{ form }}
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock content %}
