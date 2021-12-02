@@ -26,6 +26,8 @@ urlpatterns = [
     path("prestadores/", include("provider.urls")),
     # Service views
     path("servicos/", include("service.urls")),
+    # Material views
+    path("materiais/", include("material.urls")),
     # Machine views
     path("maquinas/", include("machine.urls")),
     # Static files

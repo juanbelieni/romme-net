@@ -41,8 +41,11 @@
             {% endwith %}
 
             <ul class="dropdown-menu">
+
               <li>
-                <a class="dropdown-item" href="/materiais.html">Materiais</a>
+                <a class="dropdown-item {% if tab == 'material' %}active{% endif %}" href="{% url 'material-list' %}">
+                  Materiais
+                </a>
               </li>
 
               <li>
