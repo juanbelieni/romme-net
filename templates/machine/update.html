@@ -4,7 +4,7 @@
 {% block title %}Editar máquina{% endblock title %}
 
 {% block content %}
-{% with tab="machines" %}
+{% with tab="machine" %}
 {% include "navbar.html" %}
 {% endwith %}
 
@@ -18,8 +18,8 @@
         {% csrf_token %}
 
         <div class="form-group mb-3">
-          <label for="machines_id">ID</label>
-          <input type="text" class="form-control" id="machines_id" value="{{ id }}" disabled>
+          <label for="machine_id">ID</label>
+          <input type="text" class="form-control" id="machine_id" value="{{ id }}" disabled>
         </div>
 
         {{ form }}

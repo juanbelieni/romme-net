@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     "compressor",
     "provider",
     "service",
-    "machines",
+    "machine",
     "occurrence",
 ]
 

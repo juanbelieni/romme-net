@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator
-from machines.models import Machines
+from machine.models import Machine
 from service.models import Service
 from provider.models import Provider
 
@@ -52,6 +52,6 @@ class Occurrence(models.Model):
     description = models.CharField(max_length=500)
     down_time = models.IntegerField(validators=[MinValueValidator(0)])
     category = models.CharField(max_length=50)
-    machine = models.ForeignKey(Machines, null=True, on_delete=models.SET_NULL)
+    machine = models.ForeignKey(Machine, null=True, on_delete=models.SET_NULL)
     services = models.ManyToManyField(OccurrenceService)
     created_at = models.DateTimeField(auto_now_add=True)
