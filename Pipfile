@@ -10,6 +10,7 @@ django-libsass = "*"
 gunicorn = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+django-multiselectfield = "*"
 
 [dev-packages]
 black = "*"

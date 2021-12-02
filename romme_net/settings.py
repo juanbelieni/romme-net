@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     "provider",
     "service",
     "machines",
+    "material",
 ]
 
 MIDDLEWARE = [

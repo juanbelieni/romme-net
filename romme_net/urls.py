@@ -28,6 +28,8 @@ urlpatterns = [
     path("servicos/", include("service.urls")),
     # Machines views
     path("maquinas/", include("machines.urls")),
+    # Material views
+    path("material/", include("material.urls")),
     # Static files
     *staticfiles_urlpatterns(),
 ]

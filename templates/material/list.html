@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Materiais{% endblock title %}
+
+{% block styles %}
+<link href="{% static 'scss/material/list.scss' %}" rel="stylesheet" type="text/x-scss" />
+{% endblock styles %}
+
+{% block content %}
+{% with tab="material" %}
+{% include "navbar.html" %}
+{% endwith %}
+
+<main class="container-xl py-4">
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <h1 class="h4 mb-0">Materiais</h1>
+
+    <!-- Create Button -->
+    <a href="{% url 'material-create' %}" class="btn btn-sm btn-primary">
+      <span>Novo</span>
+    </a>
+  </div>
+
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {% for materials in material %}
+      <tr>
+        <th scope="row">{{ material.id }}</th>
+        <td>{{ material.name }}</td>
+        <td>{{ material.category }}</td>
+        <td>
+          <div class="btn-group" role="group">
+            <a href="{% url 'material-update' material.id %}" class="btn btn-sm btn-primary">
+              <span>Editar</span>
+            </a>
+            <a href="{% url 'material-delete' material.id %}" class="btn btn-sm btn-danger">
+              <span>Excluir</span>
+            </a>
+          </div>
+        </td>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</main>
+
+{% endblock content %}
