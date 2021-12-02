@@ -4,7 +4,7 @@ from .models import Material
 class MaterialForm(forms.Form):
 
     name = forms.CharField(label="Nome", max_length=200)
-    category = forms.ChoiceField(choices=Material.STATUS)
+    category = forms.ChoiceField(choices=Material.MaterialCategory.choices)
 
     # Handle Bootstrap forms
     def __init__(self, *args, **kwargs):

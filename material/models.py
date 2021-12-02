@@ -4,18 +4,16 @@ from django import forms
 # Model: material
 # Columns: id, name, category
 class Material(models.Model):
-
-    STATUS = (
-        ("eletric", "Elétrico"),
-        ("hidraulic", "Hidráulico"),
-        ("mechanic", "Mecânico"),
-        ("eletronic", "Eletrônico"),
-        ("pneumatic", "Pneumático"),
-        ("consumable", "Consumível"),
-    )
+    class MaterialCategory(models.TextChoices):
+        ELECTRIC = "electric", "Elétrico"
+        HIDRAULIC = "hidraulic", "Hidráulico"
+        MECHANIC = "mechanic", "Mecânico"
+        ELETRONIC = "eletronic", "Eletrônico"
+        PNEUMATIC = "pneumatic", "Pneumático"
+        CONSUMABLE = "consumable", "Consumível"
 
     name = models.CharField(max_length=200)
     category = models.CharField(
         max_length=200,
-        choices=STATUS,
+        choices=MaterialCategory.choices,
     )
