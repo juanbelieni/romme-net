@@ -26,10 +26,10 @@ urlpatterns = [
     path("prestadores/", include("provider.urls")),
     # Service views
     path("servicos/", include("service.urls")),
-    # Machines views
-    path("maquinas/", include("machines.urls")),
     # Material views
-    path("material/", include("material.urls")),
+    path("materiais/", include("material.urls")),
+    # Machine views
+    path("maquinas/", include("machine.urls")),
     # Static files
     *staticfiles_urlpatterns(),
 ]
