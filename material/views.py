@@ -7,8 +7,8 @@ from .models import Material
 # View: list
 # Description: list all material
 def material_list(request):
-    material = Material.objects.order_by("id")
-    return render(request, "material/list.html", {"material": material})
+    materials = Material.objects.order_by("id")
+    return render(request, "material/list.html", {"materials": materials})
 
 
 # View: create
@@ -23,7 +23,7 @@ def material_create(request):
                 name=data["name"],
                 category=data["category"],
             )
-
+            
             material.save()
 
             return HttpResponseRedirect(reverse("material-list"))
