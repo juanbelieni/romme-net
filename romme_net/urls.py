@@ -30,6 +30,8 @@ urlpatterns = [
     path("materiais/", include("material.urls")),
     # Machine views
     path("maquinas/", include("machine.urls")),
+    # Occurrence views
+    path("ocorrencias/", include("occurrence.urls")),
     # Static files
     *staticfiles_urlpatterns(),
 ]

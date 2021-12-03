@@ -1,19 +1,21 @@
 from django.db import models
-from django import forms
+
+
+class MaterialCategory(models.TextChoices):
+    ELECTRIC = "electric", "Elétrico"
+    HYDRAULIC = "hydraulic", "Hidráulico"
+    MECHANIC = "mechanic", "Mecânico"
+    ELECTRONIC = "electronic", "Eletrônico"
+    PNEUMATIC = "pneumatic", "Pneumático"
+    CONSUMABLE = "consumable", "Consumível"
+
 
 # Model: material
 # Columns: id, name, category
 class Material(models.Model):
-    class MaterialCategory(models.TextChoices):
-        ELECTRIC = "electric", "Elétrico"
-        HIDRAULIC = "hidraulic", "Hidráulico"
-        MECHANIC = "mechanic", "Mecânico"
-        ELETRONIC = "eletronic", "Eletrônico"
-        PNEUMATIC = "pneumatic", "Pneumático"
-        CONSUMABLE = "consumable", "Consumível"
-
     name = models.CharField(max_length=200)
-    category = models.CharField(
-        max_length=200,
-        choices=MaterialCategory.choices,
-    )
+    category = models.CharField(choices=MaterialCategory.choices, max_length=50)
+
+    @property
+    def category_label(self):
+        return MaterialCategory(self.category).label

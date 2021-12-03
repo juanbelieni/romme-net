@@ -27,13 +27,13 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="/ocorrencias.html">
+            <a class="nav-link {% if tab == 'occurrence' %}active{% endif %}" href="/ocorrencias.html">
               Ocorrências
             </a>
           </li>
 
           <li class="nav-item dropdown">
-            {% with 'machine provider service' as other_tabs %}
+            {% with 'material machine provider service' as other_tabs %}
             <a class="nav-link dropdown-toggle {% if tab in other_tabs.split %}active{% endif %}" href="#" href="#"
               role="button" data-bs-toggle="dropdown">
               Outros
@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <a class="btn btn-primary text-nowrap" href="/nova-ocorrencia.html">
+    <a class="btn btn-primary text-nowrap" href="{% url 'occurrence-create' %}">
       Nova ocorrência
     </a>
 

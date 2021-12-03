@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     "service",
     "material",
     "occurrence",
+    "machine",
 ]
 
 MIDDLEWARE = [
