@@ -1,0 +1,335 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Nova ocorrência{% endblock title %}
+
+{% block content %}
+{% with tab="occurrence" %}
+{% include "navbar.html" %}
+{% endwith %}
+
+<!-- Occurrence service modal -->
+<form class="modal fade" tabindex="-1" role="dialog" id="occurrence-service-modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h4">Adicionar serviço</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-6">
+            <label for="service" class="form-label">Serviço</label>
+            <select class="form-select" id="service" name="service" required>
+              <option selected hidden value="">Selecione um serviço</option>
+
+              {% for service in services %}
+              <option value="{{ service.id }}">{{ service.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label for="provider" class="form-label">Prestador</label>
+            <select class="form-select" id="provider" name="provider" required>
+              <option selected hidden value="">Selecione um prestador</option>
+
+              {% for provider in providers %}
+              <option value="{{ provider.id }}">{{ provider.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-12 mt-3">
+            <label for="cost" class="form-label">Custo</label>
+            <div class="input-group">
+              <span class="input-group-text">R$</span>
+              <input class="form-control" id="cost" name="cost" type="number" min="0" required />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Occurrence material modal -->
+<form class="modal fade" tabindex="-1" role="dialog" id="occurrence-material-modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title h4">Adicionar material</h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row gx-3">
+          <div class="col-6">
+            <label for="material" class="form-label">Material</label>
+            <select class="form-select" id="material" name="material" required>
+              <option selected hidden value="">Selecione um material</option>
+
+              {% for material in materials %}
+              <option value="{{ material.id }}">{{ material.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label for="quantity" class="form-label">Quantidade</label>
+            <input class="form-control" id="quantity" name="quantity" type="number" min="0" required />
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Occurrence form -->
+<main class=" container-xl py-4">
+  <div class="card mx-auto" style="max-width: 40rem">
+    <div class="card-header">
+      <h1 class="h4">Nova ocorrência</h4>
+    </div>
+    <div class="card-body">
+      <form method="post">
+        {% csrf_token %}
+
+        <fieldset>
+          <legend class="fs-6 fw-semibold text-muted mb-3">
+            Informações gerais
+          </legend>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Descrição</label>
+
+            <textarea class="form-control" id="description" name="description" required></textarea>
+            <p class="form-text">Uma descrição detalhada da ocorrência</p>
+          </div>
+
+          <div class="mb-3">
+            <label for="category" class="form-label">Categoria</label>
+
+            <select class="form-select" id="category" name="category" required>
+              <option selected hidden value="">
+                Selecione uma categoria
+              </option>
+
+              {% for category in categories %}
+              <option value="{{ category.0 }}">{{ category.1 }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="machine" class="form-label">Máquina</label>
+
+            <select class="form-select" id="machine" name="machine" required>
+              <option selected hidden value="">Selecione uma máquina</option>
+
+              {% for machine in machines %}
+              <option value="{{ machine.id }}">{{ machine.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="downtime" class="form-label">
+              Tempo parado (horas)
+            </label>
+            <input class="form-control" id="downtime" name="downtime" type="number" min="0" step="1" required />
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+          <span class="d-flex mb-3">
+            <legend class="fs-6 fw-semibold text-muted mb-0">
+              Serviços utilizados
+            </legend>
+
+            <button class="btn btn-sm btn-outline-primary border-0" type="button" data-bs-toggle="modal"
+              data-bs-target="#occurrence-service-modal" title="Adicionar serviço">
+              <i class="bi bi-plus-lg"></i>
+            </button>
+          </span>
+
+          <table class="table" id="occurrence-services">
+            <thead>
+              <tr>
+                <th>Serviço</th>
+                <th>Prestador</th>
+                <th>Custo</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody></tbody>
+          </table>
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+          <fieldset class="d-flex mb-3">
+            <legend class="fs-6 fw-semibold text-muted mb-0">
+              Materiais utilizados
+            </legend>
+
+            <div class="adicionar-entrada">
+              <button class="btn btn-sm btn-outline-primary border-0" type="button" data-bs-toggle="modal"
+                data-bs-target="#occurrence-material-modal" title="Adicionar material">
+                <i class="bi bi-plus-lg"></i>
+              </button>
+            </div>
+          </fieldset>
+
+          <table class="table" id="occurrence-materials">
+            <thead>
+              <tr>
+                <th>Material</th>
+                <th>Quantidade</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody></tbody>
+          </table>
+
+          <div class="mb-3">
+            <label for="material_cost" class="form-label">Custo total</label>
+            <div class="input-group">
+              <span class="input-group-text">R$</span>
+              <input type="number" min="0" class="form-control" id="material_cost" name="material_cost" required />
+            </div>
+          </div>
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+          <legend class="fs-6 fw-semibold text-muted mb-3">
+            Data da ocorrência
+          </legend>
+
+          <div class="mb-3">
+            <label for="datetime" class="form-label">Data e hora</label>
+            <input class="form-control" id="datetime" name="datetime" type="datetime-local" required />
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+  const occurrenceServiceModal = document.querySelector('#occurrence-service-modal');
+
+  occurrenceServiceModal.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const serviceId = formData.get('service');
+    const serviceLabel = form.querySelector(`#service option[value="${serviceId}"]`).textContent;
+
+    const providerId = formData.get('provider');
+    const providerLabel = form.querySelector(`#provider option[value="${providerId}"]`).textContent;
+
+    const cost = formData.get('cost');
+
+    const occurrenceServices = document.querySelector('#occurrence-services tbody');
+    const occurrenceServiceRow = document.createElement('tr');
+    const index = occurrenceServices.children.length;
+
+    occurrenceServiceRow.innerHTML = `
+      <td>
+        <input type="hidden" name="os_services" value="${serviceId}" />
+        ${serviceLabel}
+      </td>
+      <td>
+        <input type="hidden" name="os_providers" value="${providerId}" />
+        ${providerLabel}
+      </td>
+      <td>
+        <input type="hidden" name="os_costs" value="${cost}" />
+        ${cost}
+      </td>
+      <td>
+        <button class="btn btn-sm btn-outline-danger border-0 py-0 px-1" type="button" title="Remover serviço" onclick="removeOccurrenceService(${index})">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </td>
+    `;
+
+    occurrenceServices.appendChild(occurrenceServiceRow);
+
+    form.reset();
+    occurrenceServiceModal.querySelector('[data-bs-dismiss="modal"]').click();
+  });
+
+  function removeOccurrenceService(index) {
+    const occurrenceServices = document.querySelector('#occurrence-services tbody');
+    occurrenceServices.removeChild(occurrenceServices.children[index]);
+  }
+
+  const occurrenceMaterialModal = document.querySelector('#occurrence-material-modal');
+
+  occurrenceMaterialModal.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const materialId = formData.get('material');
+    const materialLabel = form.querySelector(`#material option[value="${materialId}"]`).textContent;
+
+    const quantity = formData.get('quantity');
+
+    const occurrenceMaterials = document.querySelector('#occurrence-materials tbody');
+    const occurrenceMaterialRow = document.createElement('tr');
+    const index = occurrenceMaterials.children.length;
+
+    occurrenceMaterialRow.innerHTML = `
+      <td>
+        <input type="hidden" name="om_materials" value="${materialId}" />
+        ${materialLabel}
+      </td>
+      <td>
+        <input type="hidden" name="om_quantities" value="${quantity}" />
+        ${quantity}
+      </td>
+      <td>
+        <button class="btn btn-sm btn-outline-danger border-0 py-0 px-1" type="button" title="Remover material" onclick="removeOccurrenceMaterial(${index})">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </td>
+    `;
+
+    occurrenceMaterials.appendChild(occurrenceMaterialRow);
+
+    form.reset();
+    occurrenceMaterialModal.querySelector('[data-bs-dismiss="modal"]').click();
+  });
+
+  function removeOccurrenceMaterial(index) {
+    const occurrenceMaterials = document.querySelector('#occurrence-materials tbody');
+    occurrenceMaterials.removeChild(occurrenceMaterials.children[index]);
+  }
+</script>
+{% endblock scripts %}

@@ -4,11 +4,11 @@
 {% block title %}Máquinas{% endblock title %}
 
 {% block styles %}
-<link href="{% static 'scss/machines/list.scss' %}" rel="stylesheet" type="text/x-scss" />
+<link href="{% static 'scss/machine/list.scss' %}" rel="stylesheet" type="text/x-scss" />
 {% endblock styles %}
 
 {% block content %}
-{% with tab="machines" %}
+{% with tab="machine" %}
 {% include "navbar.html" %}
 {% endwith %}
 
@@ -17,7 +17,7 @@
     <h1 class="h4 mb-0">Máquinas</h1>
 
     <!-- Create Button -->
-    <a href="{% url 'machines-create' %}" class="btn btn-sm btn-primary">
+    <a href="{% url 'machine-create' %}" class="btn btn-sm btn-primary">
       <span>Novo</span>
     </a>
   </div>
@@ -41,10 +41,10 @@
         <td>{{ machine.description }}</td>
         <td>
           <div class="btn-group" role="group">
-            <a href="{% url 'machines-update' machine.id %}" class="btn btn-sm btn-primary">
+            <a href="{% url 'machine-update' machine.id %}" class="btn btn-sm btn-primary">
               <span>Editar</span>
             </a>
-            <a href="{% url 'machines-delete' machine.id %}" class="btn btn-sm btn-danger">
+            <a href="{% url 'machine-delete' machine.id %}" class="btn btn-sm btn-danger">
               <span>Excluir</span>
             </a>
           </div>
