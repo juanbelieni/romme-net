@@ -21,7 +21,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path("admin/", admin.site.urls),
     # Dashboard view, at '/',
-    path("", views.dashboard, name="dashboard"),
+    path("", include("dashboard.urls")),
     # Provider views
     path("prestadores/", include("provider.urls")),
     # Service views

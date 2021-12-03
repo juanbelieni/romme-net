@@ -50,8 +50,9 @@ INSTALLED_APPS = [
     "provider",
     "service",
     "material",
-    "occurrence",
     "machine",
+    "occurrence",
+    "dashboard"
 ]
 
 MIDDLEWARE = [
