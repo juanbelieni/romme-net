@@ -15,7 +15,7 @@ class OccurrenceCategory(models.TextChoices):
 
 class Occurrence(models.Model):
     description = models.CharField(max_length=500)
-    material_cost = models.DecimalField(
+    total_cost = models.DecimalField(
         decimal_places=2,
         max_digits=11,
         validators=[MinValueValidator(0)],
@@ -34,11 +34,6 @@ class OccurrenceService(models.Model):
     occurrence = models.ForeignKey(Occurrence, on_delete=models.CASCADE)
     service = models.ForeignKey(Service, null=True, on_delete=models.SET_NULL)
     provider = models.ForeignKey(Provider, null=True, on_delete=models.SET_NULL)
-    cost = models.DecimalField(
-        decimal_places=2,
-        max_digits=11,
-        validators=[MinValueValidator(0)],
-    )
 
 
 class OccurrenceMaterial(models.Model):
