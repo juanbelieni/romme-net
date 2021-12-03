@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 # View: dashboard
 # Description: renders the dashboard page
-def dashboard(request):
-    return render(request, 'dashboard.html', {})
+#def dashboard(request):
+#    return render(request, 'dashboard.html', {})
