@@ -40,21 +40,14 @@
               {% endfor %}
             </select>
           </div>
-
-          <div class="col-12 mt-3">
-            <label for="cost" class="form-label">Custo</label>
-            <div class="input-group">
-              <span class="input-group-text">R$</span>
-              <input class="form-control" id="cost" name="cost" type="number" min="0" required />
-            </div>
-          </div>
         </div>
       </div>
-
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Adicionar</button>
-      </div>
     </div>
+
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary">Adicionar</button>
+    </div>
+  </div>
   </div>
 </form>
 
@@ -251,7 +244,6 @@
     const providerId = formData.get('provider');
     const providerLabel = form.querySelector(`#provider option[value="${providerId}"]`).textContent;
 
-    const cost = formData.get('cost');
 
     const occurrenceServices = document.querySelector('#occurrence-services tbody');
     const occurrenceServiceRow = document.createElement('tr');
@@ -265,10 +257,6 @@
       <td>
         <input type="hidden" name="os_providers" value="${providerId}" />
         ${providerLabel}
-      </td>
-      <td>
-        <input type="hidden" name="os_costs" value="${cost}" />
-        ${cost}
       </td>
       <td>
         <button class="btn btn-sm btn-outline-danger border-0 py-0 px-1" type="button" title="Remover serviço" onclick="removeOccurrenceService(${index})">
