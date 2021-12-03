@@ -1,21 +1,26 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Nova máquina{% endblock title %}
+{% block title %}Editar material{% endblock title %}
 
 {% block content %}
-{% with tab="machines" %}
+{% with tab="material" %}
 {% include "navbar.html" %}
 {% endwith %}
 
 <main class="container-xl py-4">
   <div class="card mx-auto" style="max-width: 32rem">
     <div class="card-header">
-      <h1 class="h4">Nova máquina</h4>
+      <h1 class="h4">Editar material</h4>
     </div>
     <div class="card-body">
       <form method="post">
         {% csrf_token %}
+
+        <div class="form-group mb-3">
+          <label for="material_id">ID</label>
+          <input type="text" class="form-control" id="material_id" value="{{ id }}" disabled>
+        </div>
 
         {{ form }}
 

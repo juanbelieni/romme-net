@@ -49,7 +49,9 @@ INSTALLED_APPS = [
     "compressor",
     "provider",
     "service",
-    "machines",
+    "material",
+    "occurrence",
+    "machine",
 ]
 
 MIDDLEWARE = [

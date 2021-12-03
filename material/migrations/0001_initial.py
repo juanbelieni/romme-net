@@ -12,12 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Provider',
+            name='Material',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=200)),
-                ('phone', models.CharField(max_length=15)),
-                ('address', models.CharField(max_length=200)),
+                ('category', models.CharField(choices=[('electric', 'Elétrico'), ('hydraulic', 'Hidráulico'), ('mechanic', 'Mecânico'), ('electronic', 'Eletrônico'), ('pneumatic', 'Pneumático'), ('consumable', 'Consumível')], max_length=50)),
             ],
         ),
     ]
