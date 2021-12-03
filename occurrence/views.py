@@ -1,9 +1,17 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse
 from material.models import Material
 from occurrence.models import Occurrence, OccurrenceCategory, OccurrenceMaterial, OccurrenceService
 from machine.models import Machine
 from service.models import Service
 from provider.models import Provider
+from django.urls import reverse
+
+# View: list
+# Description: list all occurences
+def occurrence_list(request):
+    occurrences = Occurrence.objects.order_by("id")
+    return render(request, "occurrence/list.html", {"occurences": occurrences})
 
 # View: create
 # Description: create a new occurrence
@@ -61,7 +69,7 @@ def occurrence_create(request):
             occurrence_material.save()
             print(occurrence_material)
 
-        return HttpResponse("TODO: listar as ocorrencias")
+        return HttpResponseRedirect(reverse("occurrence-list"))
 
     categories = OccurrenceCategory.choices
     machines = Machine.objects.all()
