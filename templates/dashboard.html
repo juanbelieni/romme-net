@@ -21,7 +21,7 @@
           <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">29</p>
+                <p class="text-primary fs-1 fw-bold mb-1"><span id="ultimo_mes"></span></p>
                 <p class="mb-2 fw-bold">Ocorrências este mês</p>
               </div>
             </div>
@@ -30,7 +30,7 @@
           <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">08</p>
+                <p class="text-primary fs-1 fw-bold mb-1"><span id="ultima_semana"></span></p>
                 <p class="mb-2 fw-bold">Ocorrências esta semana</p>
               </div>
             </div>
@@ -39,7 +39,7 @@
           <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">03</p>
+                <p class="text-primary fs-1 fw-bold mb-1"><span id="ultimo_dia"></span></p>
                 <p class="mb-2 fw-bold">Ocorrências hoje</p>
               </div>
             </div>
@@ -48,7 +48,7 @@
           <div class="col-sm-6 col-lg-3">
             <div class="card shadow-sm text-center py-2">
               <div class="card-body">
-                <p class="text-primary fs-1 fw-bold mb-1">R$ 3521,45</p>
+                <p class="text-primary fs-1 fw-bold mb-1">R$ <span id="gasto_total"></span></p>
                 <p class="mb-2 fw-bold">Total gasto no último mês</p>
               </div>
             </div>
@@ -167,7 +167,11 @@
 <script src="{% static 'js/dashboard.js' %}"></script> {% endcomment %}
 <script>
   window.onload = function (event) {
-    renderiza_despesas_mensal()
+    renderiza_total_gasto('{% url "retorna_total_gasto" %}')
+    renderiza_ultimo_mes('{% url "retorna_ocorrencias_mes" %}')
+    renderiza_ultima_semana('{% url "retorna_ocorrencias_semana" %}')
+    renderiza_ultimo_dia('{% url "retorna_ocorrencias_hoje" %}')
+    renderiza_despesa_mensal('{% url "relatorio_gastos" %}')
   }
 </script>
 {% endblock scripts %}
