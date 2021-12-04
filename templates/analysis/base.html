@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link href="{% static 'scss/analysis.scss' %}" rel="stylesheet" type="text/x-scss" />
+{% endblock styles %}
+
+{% block content %}
+{% with tab="analysis" %}
+{% include "navbar.html" %}
+{% endwith %}
+
+<main class="container-xl py-4">
+  {% block analysis %}
+  {% endblock analysis %}
+</main>
+
+{% endblock content %}
+
+{% block scripts %}
+<script>
+  hljs.highlightAll();
+</script>
+{% endblock scripts %}

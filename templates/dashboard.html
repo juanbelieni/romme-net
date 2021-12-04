@@ -163,8 +163,7 @@
 {% endblock content %}
 
 {% block scripts %}
-{% comment %} <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="{% static 'js/dashboard.js' %}"></script> {% endcomment %}
+<script src="{% static 'js/dashboard.js' %}"></script>
 <script>
   window.onload = function (event) {
     renderiza_total_gasto('{% url "retorna_total_gasto" %}')

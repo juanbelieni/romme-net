@@ -10,6 +10,9 @@ django-libsass = "*"
 gunicorn = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+pandas = "*"
+numpy = "*"
+matplotlib = "*"
 
 [dev-packages]
 black = "*"
