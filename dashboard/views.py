@@ -5,7 +5,8 @@ from occurrence.models import Occurrence
 from django.db.models import Sum
 
 def dashboard(request):
-    return render(request, "dashboard.html")
+    occurrences = Occurrence.objects.order_by("-datetime")[:5]
+    return render(request, "dashboard.html", { "occurrences" : occurrences })
 
 def relatorio_gastos(request):
     x = Occurrence.objects.all()
@@ -55,14 +56,6 @@ def retorna_ocorrencias_semana(request):
     x = Occurrence.objects.filter(datetime__range=[startdate, enddate])
     total = x.count()
     return JsonResponse({'total': total})
-
-""" def retorna_ocorrencias_hoje(request):
-    enddate = datetime.today()
-    startdate = enddate - timedelta(hours=24)
-
-    x = Occurrence.objects.filter(datetime__range=[startdate, enddate])
-    total = x.count()
-    return JsonResponse({'total': total}) """
 
 def retorna_ocorrencias_hoje(request):
     mes = datetime.now().month
