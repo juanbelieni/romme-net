@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.http import JsonResponse
 from occurrence.models import Occurrence
+from django.db.models import Sum
 
 def dashboard(request):
     return render(request, "dashboard.html")
@@ -28,3 +29,47 @@ def relatorio_gastos(request):
     data_json = {'data': data[::-1], 'labels': labels[::-1]}
      
     return JsonResponse(data_json)
+
+def retorna_total_gasto(request):
+    enddate = datetime.today()
+    startdate = enddate - timedelta(days=30)
+    
+
+    x = Occurrence.objects.filter(datetime__range=[startdate, enddate])
+    total = x.aggregate(Sum('total_cost'))['total_cost__sum']
+    return JsonResponse({'total': total})
+
+def retorna_ocorrencias_mes(request):
+    enddate = datetime.today()
+    startdate = enddate - timedelta(days=30)
+    
+
+    x = Occurrence.objects.filter(datetime__range=[startdate, enddate])
+    total = x.count()
+    return JsonResponse({'total': total})
+
+def retorna_ocorrencias_semana(request):
+    enddate = datetime.today()
+    startdate = enddate - timedelta(days=7)
+
+    x = Occurrence.objects.filter(datetime__range=[startdate, enddate])
+    total = x.count()
+    return JsonResponse({'total': total})
+
+""" def retorna_ocorrencias_hoje(request):
+    enddate = datetime.today()
+    startdate = enddate - timedelta(hours=24)
+
+    x = Occurrence.objects.filter(datetime__range=[startdate, enddate])
+    total = x.count()
+    return JsonResponse({'total': total}) """
+
+def retorna_ocorrencias_hoje(request):
+    mes = datetime.now().month
+    ano = datetime.now().year 
+    dia = datetime.now().day
+
+    x = Occurrence.objects.filter(datetime__year=ano, 
+                      datetime__month=mes, datetime__day = dia)
+    total = x.count()
+    return JsonResponse({'total': total})

@@ -45,3 +45,47 @@ function renderiza_despesa_mensal(url){
     })
 
 }
+
+function renderiza_total_gasto(url){  
+  fetch(url, {
+      method: 'get',
+  }).then(function(result){
+      return result.json()
+  }).then(function(data){
+      document.getElementById('gasto_total').innerHTML = data.total
+  })
+
+}
+
+function renderiza_ultimo_mes(url){  
+  fetch(url, {
+      method: 'get',
+  }).then(function(result){
+      return result.json()
+  }).then(function(data){
+      document.getElementById('ultimo_mes').innerHTML = data.total
+  })
+
+}
+
+function renderiza_ultima_semana(url){  
+  fetch(url, {
+      method: 'get',
+  }).then(function(result){
+      return result.json()
+  }).then(function(data){
+      document.getElementById('ultima_semana').innerHTML = data.total
+  })
+
+}
+
+function renderiza_ultimo_dia(url){  
+  fetch(url, {
+      method: 'get',
+  }).then(function(result){
+      return result.json()
+  }).then(function(data){
+      document.getElementById('ultimo_dia').innerHTML = data.total
+  })
+
+}
