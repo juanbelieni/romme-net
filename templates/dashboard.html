@@ -167,7 +167,7 @@
 <script src="{% static 'js/dashboard.js' %}"></script> {% endcomment %}
 <script>
   window.onload = function (event) {
-    renderiza_despesas_mensal()
+    renderiza_despesa_mensal('{% url "relatorio_gastos" %}')
   }
 </script>
 {% endblock scripts %}
