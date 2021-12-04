@@ -28,10 +28,8 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Descrição</th>
-        <th scope="col">$ Material</th>
-        <th scope="col">$ Serviço</th>
-        <th scope="col">$ Total</th>
-        <th scope="col">Tempo Parado</th>
+        <th scope="col text-nowrap">$ Total</th>
+        <th scope="col text-nowrap">Tempo Parado</th>
         <th scope="col">Categoria</th>
         <th scope="col">Máquina</th>
         <th scope="col">Data</th>
@@ -39,17 +37,15 @@
     </thead>
 
     <tbody>
-      {% for occurrence in occurences %}
+      {% for occurrence in occurrences %}
       <tr>
         <th scope="row">{{ occurrence.id }}</th>
         <td>{{ occurrence.description }}</td>
-        <td>{{ occurrence.material_cost }}</td>
-        <td>0,00</td>
-        <td>0,00</td>
+        <td>{{ occurrence.total_cost }}</td>
         <td>{{ occurrence.downtime }}</td>
-        <td>{{ occurrence.category_label }}</td>
-        <td>{{ occurrence.machine_id }}</td>
-        <td>{{ occurrence.datetime }}</td>
+        <td class="text-nowrap">{{ occurrence.category_label }}</td>
+        <td class="text-nowrap">{{ occurrence.machine.name }}</td>
+        <td class="text-nowrap">{{ occurrence.datetime }}</td>
       </tr>
       {% endfor %}
     </tbody>

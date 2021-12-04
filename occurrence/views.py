@@ -1,17 +1,23 @@
 from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, HttpResponse
 from material.models import Material
-from occurrence.models import Occurrence, OccurrenceCategory, OccurrenceMaterial, OccurrenceService
+from occurrence.models import (
+    Occurrence,
+    OccurrenceCategory,
+    OccurrenceMaterial,
+    OccurrenceService,
+)
 from machine.models import Machine
 from service.models import Service
 from provider.models import Provider
 from django.urls import reverse
 
 # View: list
-# Description: list all occurences
+# Description: list all occurrences
 def occurrence_list(request):
-    occurrences = Occurrence.objects.order_by("id")
-    return render(request, "occurrence/list.html", {"occurences": occurrences})
+    occurrences = Occurrence.objects.order_by("-datetime").select_related("machine")
+    return render(request, "occurrence/list.html", {"occurrences": occurrences})
+
 
 # View: create
 # Description: create a new occurrence
