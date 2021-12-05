@@ -1,28 +1,15 @@
 {% extends "analysis/base.html" %}
+{% load static %}
 
 {% block title %}Juan{% endblock title %}
 
 {% block analysis %}
 
-<h1>Lorem Ipsum Dolor Sit Amet</h1>
+<h1>Qual é a frequência de cada material sendo empregado na manutenção?</h1>
 
-<hr />
+<hr>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<h2>Notebook</h2>
 
-<figure class="figure">
-  <img class="figure-img img-fluid rounded" src='data:image/png;base64,{{ chart }}' alt="Juan" />
-  <figcaption class="figure-caption">Juan</figcaption>
-</figure>
-
-<pre><code class="language-python">from django.http import HttpResponse
-from django.template import loader
-from django.shortcuts import render
-
-def test(request):
-&nbsp;&nbsp;&nbsp;&nbsp;return render(request, 'analysis/juan.html', {})
-</code></pre>
-{% endblock analysis %}
+<iframe src="{% static 'analysis/juan.html' %}" width="100%" style="height: 225rem"><iframe>
+    {% endblock analysis %}

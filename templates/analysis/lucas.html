@@ -1,0 +1,42 @@
+{% extends "analysis/base.html" %}
+{% load static %}
+
+{% block title %}Lucas{% endblock title %}
+
+{% block analysis %}
+
+<h1>Qual é a densidade de dados em cada categoria de ocorrência?</h1>
+
+<br>
+
+<h2>Análise</h2>
+
+<p>Coletamos os dados pertinentes da base de dados, descartando informações não necessárias.</p>
+
+<p>Dividimos então esses dados entre as categorias catalogadas: ações de prevenção, correção, melhorias e ações
+  periódicas</p>
+
+<p>
+  Na sequência plotamos os graficos de cada categoria: o eixo das abcissas nos mostra todas as ocorrências analisadas e
+  o eixo das ordenadas nos dá qual é o identificador da ocorrência em questão.
+</p>
+
+<p>
+  Caso os dados estejam bem distribuídos, teremos uma distribuição linear com pontos abundantes e/ou bem espaçados.
+  Podemos ainda ter pontos distantes uns dos outros, indicando poucos cadastros na categoria, e gráficos retilíneos por
+  partes.
+</p>
+
+<p>
+  Essa análise responde em quê o mecânico da empresa está ocupado ao longo do tempo: esteve corrigindo problemas ou
+  prevenindo-os? Este produzindo melhorias nas máquinas? É útil para que a gerência entenda a dinâmica do setor de
+  manutenção para, por exemplo, identificar a necessidade de contratação de mais mecânicos.
+</p>
+
+<br>
+
+<h2>Notebook</h2>
+
+<iframe src="{% static 'analysis/lucas.html' %}" width="100%" style="height: 225rem"><iframe>
+
+    {% endblock analysis %}
