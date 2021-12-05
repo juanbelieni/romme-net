@@ -64,37 +64,25 @@
       <div class="col-md-6">
         <div class="card" id="maquinas-com-mais-despesas">
           <div class="card-body">
-            <h5 class="card-title">Máquinas com maior aumento de gastos</h5>
+            <h5 class="card-title">Máquinas com maior despesa em manutenção</h5>
             <h6 class="card-subtitle text-muted">
               Registros no último mês
             </h6>
           </div>
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <span class="text-truncate me-2">Fresadora CNC</span>
-              <span class="badge rounded-pill bg-danger">&uarr; 53%</span>
-            </li>
 
+            {% for machine in machines %}
             <li class="list-group-item">
-              <span class="text-truncate me-2">Compressor</span>
-              <span class="badge rounded-pill bg-danger">&uarr; 45%</span>
+              <span class="text-truncate me-2">
+                {{ machine.machine }}
+              </span>
+              <small class="text-muted text-nowrap">
+                R$ {{ machine.total_cost }}
+              </small>
             </li>
+            {% endfor %}
 
-            <li class="list-group-item">
-              <span class="text-truncate me-2">Pulverizador</span>
-              <span class="badge rounded-pill bg-danger">&uarr; 40%</span>
-            </li>
-
-            <li class="list-group-item">
-              <span class="text-truncate me-2">Forno de Indução</span>
-              <span class="badge rounded-pill bg-warning text-dark">&uarr; 20%</span>
-            </li>
-
-            <li class="list-group-item">
-              <span class="text-truncate me-2">Torno Mecânico </span>
-              <span class="badge rounded-pill bg-warning text-dark">&uarr; 15%</span>
-            </li>
           </ul>
         </div>
       </div>
@@ -105,46 +93,23 @@
           <div class="card-body">
             <h5 class="card-title">Últimas ocorrências</h5>
             <h6 class="card-subtitle text-muted">
-              Ocorrências registradas nas últimas 24 horas
+              5 ocorrências mais recentes
             </h6>
           </div>
 
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <span class="text-truncate me-2">
-                Compressores: Manutenção preventiva - troca dos filtros de
-                ar
-              </span>
-              <small class="text-muted text-nowrap">20 minutos atrás</small>
-            </li>
 
+            {% for occurrence in occurrences %}
             <li class="list-group-item">
               <span class="text-truncate me-2">
-                Torno Mecânico: Manutenção corretiva - ajuste cabeçote móvel
+                {{ occurrence.description }}
               </span>
-              <small class="text-muted text-nowrap">4 horas atrás</small>
+              <small class="text-muted text-nowrap">
+                {{ occurrence.datetime|time }}
+              </small>
             </li>
+            {% endfor %}
 
-            <li class="list-group-item">
-              <span class="text-truncate me-2">
-                Fresadora: Manutenção preventiva - lubrificação
-              </span>
-              <small class="text-muted text-nowrap">5 horas atrás</small>
-            </li>
-
-            <li class="list-group-item">
-              <span class="text-truncate me-2">
-                Fresadora: Manutenção preventiva - lubrificação
-              </span>
-              <small class="text-muted text-nowrap">5 horas atrás</small>
-            </li>
-
-            <li class="list-group-item">
-              <span class="text-truncate me-2">
-                Fresadora: Manutenção preventiva - lubrificação
-              </span>
-              <small class="text-muted text-nowrap">5 horas atrás</small>
-            </li>
           </ul>
         </div>
       </div>
