@@ -67,7 +67,9 @@
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <a class="dropdown-item {% if tab == 'analysis' %}active{% endif %}" href="#">Análises</a>
+                <a class="dropdown-item {% if tab == 'analysis' %}active{% endif %}" href="{% url 'analysis' %}">
+                  Análises
+                </a>
               </li>
             </ul>
           </li>

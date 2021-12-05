@@ -1,8 +1,14 @@
+main {
+  max-width: 64rem !important;
+  margin: 0 auto;
+}
+
 .analysis-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(20rem, 28rem));
+  grid-template-columns: repeat(2, minmax(20rem, 1fr));
   gap: 2rem;
-  // justify-content: space-between;
+
+  margin-bottom: 4rem;
 }
 
 .analysis-card {
@@ -14,14 +20,17 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 
+  text-decoration: none;
+  color: #333;
+
   &:hover {
     transform: translateY(-0.25rem);
+    color: #333;
   }
 
   img {
     max-width: 100%;
-    width: 28rem;
-    height: 14rem;
+    height: 16rem;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 
