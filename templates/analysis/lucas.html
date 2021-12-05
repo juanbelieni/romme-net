@@ -1,0 +1,84 @@
+{% extends "analysis/base.html" %}
+
+{% block title %}Lucas{% endblock title %}
+
+{% block analysis %}
+
+<h1>Qual é a densidade de entradas em cada categoria de ocorrência?</h1>
+
+<p>O dataframe das ocorrências possui informações de tempo e id. Importa-se:</p>
+
+<pre><code class="language-python">from django.http import HttpResponse
+  from django.template import loader
+  from django.shortcuts import render
+  
+  def test(request):
+  &nbsp;&nbsp;&nbsp;&nbsp;return render(request, 'analysis/juan.html', {})
+  </code></pre>
+
+<p>Eliminam-se as colunas não úteis para a análise e separam-se os dados nas suas categorias:</p>
+
+<pre><code class="language-python">
+  bruto.drop(['Unnamed: 0',
+ 'index',
+ 'machine_id',
+ 'material_cost',
+ 'service_cost',
+ 'total_cost',
+ 'description',
+ 'created_at',
+ 'time_stopped'],
+ axis='columns', inplace=True)
+
+ preventivo = bruto.loc[(bruto['category'] == 1)]
+ corretivo = bruto.loc[(bruto['category'] == 2)]
+ melhoria = bruto.loc[(bruto['category'] == 3)]
+ periodico = bruto.loc[(bruto['category'] == 4)]
+</code></pre>
+
+
+<p>Plotam-se então as entradas:</p>
+
+<pre><code class="language-python">
+  plt.plot(preventivo["id"].to_numpy(), np.arange(len(preventivo["id"])), 'go-', label='line 1', linewidth=1)
+</code></pre>
+<figure class="figure">
+  <img class="figure-img img-fluid rounded" src='data:image/png;base64,{{ chart }}' alt="Juan" />
+  <figcaption class="figure-caption">Preventivas</figcaption>
+</figure>
+
+<pre><code class="language-python">
+  plt.plot(corretivo["id"].to_numpy(), np.arange(len(corretivo["id"])), 'go-', label='line 1', linewidth=1)
+</code></pre>
+<figure class="figure">
+  <img class="figure-img img-fluid rounded" src='data:image/png;base64,{{ chart }}' alt="Juan" />
+  <figcaption class="figure-caption">Corretivas</figcaption>
+</figure>
+
+
+<pre><code class="language-python">
+  plt.plot(melhoria["id"].to_numpy(), np.arange(len(melhoria["id"])), 'go-', label='line 1', linewidth=1)
+</code></pre>
+<figure class="figure">
+  <img class="figure-img img-fluid rounded" src='data:image/png;base64,{{ chart }}' alt="Juan" />
+  <figcaption class="figure-caption">Melhorias</figcaption>
+</figure>
+
+
+<pre><code class="language-python">
+  plt.plot(periodico["id"].to_numpy(), np.arange(len(periodico["id"])), 'go-', label='line 1', linewidth=1)
+</code></pre>
+<figure class="figure">
+  <img class="figure-img img-fluid rounded" src='data:image/png;base64,{{ chart }}' alt="Juan" />
+  <figcaption class="figure-caption">Periódicos</figcaption>
+</figure>
+
+<p>
+  Conclusão:
+  São pouquissimas e inconstantes as entradas de prevenção.
+  São várias e constantes as entradas de correção.
+  São inconstantes as entradas de melhoria, indicando um período sem tempo para melhoria
+  São constantes as entradas de periodico, indicando que os dados são bons (afinal, essas medidas são periódicas)
+</p>
+
+{% endblock analysis %}
