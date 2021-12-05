@@ -27,13 +27,13 @@ def occurrence_create(request):
         category = request.POST.get("category")
         machine_id = request.POST.get("machine")
         downtime = request.POST.get("downtime")
-        material_cost = request.POST.get("material_cost")
+        total_cost = request.POST.get("total_cost")
         datetime = request.POST.get("datetime")
 
         machine = Machine.objects.get(id=machine_id)
         occurrence = Occurrence(
             description=description,
-            material_cost=material_cost,
+            total_cost=total_cost,
             category=category,
             machine=machine,
             downtime=downtime,
@@ -44,9 +44,8 @@ def occurrence_create(request):
 
         services_id = request.POST.getlist("os_services")
         providers_id = request.POST.getlist("os_providers")
-        costs = request.POST.getlist("os_costs")
 
-        for service_id, provider_id, cost in zip(services_id, providers_id, costs):
+        for service_id, provider_id in zip(services_id, providers_id):
             service = Service.objects.get(id=service_id)
             provider = Provider.objects.get(id=provider_id)
 
@@ -54,11 +53,9 @@ def occurrence_create(request):
                 occurrence=occurrence,
                 service=service,
                 provider=provider,
-                cost=cost,
             )
 
             occurrence_service.save()
-            print(occurrence_service)
 
         materials_id = request.POST.getlist("om_materials")
         quantities = request.POST.getlist("om_quantities")
@@ -73,7 +70,6 @@ def occurrence_create(request):
             )
 
             occurrence_material.save()
-            print(occurrence_material)
 
         return HttpResponseRedirect(reverse("occurrence-list"))
 

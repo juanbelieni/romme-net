@@ -42,12 +42,12 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="modal-footer">
-      <button type="submit" class="btn btn-primary">Adicionar</button>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Adicionar</button>
+      </div>
     </div>
-  </div>
   </div>
 </form>
 
@@ -199,11 +199,20 @@
             <tbody></tbody>
           </table>
 
+        </fieldset>
+
+        <hr />
+
+        <fieldset>
+          <legend class="fs-6 fw-semibold text-muted mb-3">
+            Custo total
+          </legend>
+
           <div class="mb-3">
-            <label for="material_cost" class="form-label">Custo total</label>
+            <label for="total_cost" class="form-label">Custo total</label>
             <div class="input-group">
               <span class="input-group-text">R$</span>
-              <input type="number" min="0" class="form-control" id="material_cost" name="material_cost" required />
+              <input type="number" min="0" class="form-control" id="total_cost" name="total_cost" required />
             </div>
           </div>
         </fieldset>

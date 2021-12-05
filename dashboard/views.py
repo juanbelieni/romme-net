@@ -75,6 +75,7 @@ def most_costly_machines():
     startdate = enddate - timedelta(days=2000)
 
     occurrences = Occurrence.objects.filter(datetime__range=[startdate, enddate]).select_related("machine")
+    occurrences = [occurrence for occurrence in occurrences if occurrence.machine is not None]
     
     df = pd.DataFrame(dict(
         total_cost = [occurrence.total_cost for occurrence in occurrences], 
