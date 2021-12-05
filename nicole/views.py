@@ -1,5 +1,4 @@
 from django.shortcuts import render
 
-
 def analysis(request):
-    return render(request, "analysis/index.html")
+    return render(request, 'analysis/nicole.html')

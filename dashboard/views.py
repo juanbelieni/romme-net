@@ -1,11 +1,15 @@
+from django.db.models.expressions import OrderBy
 from django.shortcuts import render
 from datetime import datetime, timedelta
 from django.http import JsonResponse
 from occurrence.models import Occurrence
 from django.db.models import Sum
+import pandas as pd
 
 def dashboard(request):
-    return render(request, "dashboard.html")
+    occurrences = Occurrence.objects.order_by("-datetime")[:5]
+    machines = most_costly_machines()
+    return render(request, "dashboard.html", { "machines" : machines, "occurrences" : occurrences })
 
 def relatorio_gastos(request):
     x = Occurrence.objects.all()
@@ -56,14 +60,6 @@ def retorna_ocorrencias_semana(request):
     total = x.count()
     return JsonResponse({'total': total})
 
-""" def retorna_ocorrencias_hoje(request):
-    enddate = datetime.today()
-    startdate = enddate - timedelta(hours=24)
-
-    x = Occurrence.objects.filter(datetime__range=[startdate, enddate])
-    total = x.count()
-    return JsonResponse({'total': total}) """
-
 def retorna_ocorrencias_hoje(request):
     mes = datetime.now().month
     ano = datetime.now().year 
@@ -73,3 +69,18 @@ def retorna_ocorrencias_hoje(request):
                       datetime__month=mes, datetime__day = dia)
     total = x.count()
     return JsonResponse({'total': total})
+
+def most_costly_machines():
+    enddate = datetime.now()
+    startdate = enddate - timedelta(days=2000)
+
+    occurrences = Occurrence.objects.filter(datetime__range=[startdate, enddate]).select_related("machine")
+    
+    df = pd.DataFrame(dict(
+        total_cost = [occurrence.total_cost for occurrence in occurrences], 
+        machine = [occurrence.machine.name for occurrence in occurrences], 
+    ))
+
+    df = df.groupby("machine", as_index = False).agg({"total_cost" : "sum"}).sort_values("total_cost", ascending = False)[:5]
+
+    return [dict(total_cost = total_cost, machine = machine) for total_cost , machine in zip(df["total_cost"], df["machine"])]

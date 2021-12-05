@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Análises{% endblock title %}
+
+{% block styles %}
+<link href="{% static 'scss/analysis-page.scss' %}" rel="stylesheet" type="text/x-scss" />
+{% endblock styles %}
+
+{% block content %}
+{% with tab="analysis" %}
+{% include "navbar.html" %}
+{% endwith %}
+
+<main class="container-xl py-4">
+  <h1>Análises</h1>
+
+  <p class="mb-5">
+    As análises presentes aqui se basearam no conteúdo existente em dados reais extraídos de um aplicativo com o
+    propósito análogo. Cada análise foi feita em uma aplicação separada, utilizando o Jupyter no começo, e depois
+    passando esses dados para um template do Django.
+  </p>
+
+  <div class="analysis-grid">
+    <a class="analysis-card" href="#">
+      <img src="https://imagens.mfrural.com.br/mfrural-produtos-us/160873-228063-2030656-envasadora-de-liquido.jpg"
+        alt="Análise teste" />
+
+      <div class="analysis-card-text">
+        <h2 class="h4 mb-0">Análise teste</h2>
+        <p class="text-muted">Carlos</p>
+      </div>
+    </a>
+
+    <a class="analysis-card" href="#">
+      <img src="https://imagens.mfrural.com.br/mfrural-produtos-us/160873-228063-2030656-envasadora-de-liquido.jpg"
+        alt="Análise teste" />
+
+      <div class="analysis-card-text">
+        <h2 class="h4 mb-0">Análise teste</h2>
+        <p class="text-muted">Juan</p>
+      </div>
+    </a>
+
+    <a class="analysis-card" href="#">
+      <img src="https://imagens.mfrural.com.br/mfrural-produtos-us/160873-228063-2030656-envasadora-de-liquido.jpg"
+        alt="Análise teste" />
+
+      <div class="analysis-card-text">
+        <h2 class="h4 mb-0">Análise teste</h2>
+        <p class="text-muted">Lucas</p>
+      </div>
+    </a>
+
+    <a class="analysis-card" href="#">
+      <img src="https://imagens.mfrural.com.br/mfrural-produtos-us/160873-228063-2030656-envasadora-de-liquido.jpg"
+        alt="Análise teste" />
+
+      <div class="analysis-card-text">
+        <h2 class="h4 mb-0">Análise teste</h2>
+        <p class="text-muted">Nicole</p>
+      </div>
+    </a>
+  </div>
+</main>
+
+{% endblock content %}

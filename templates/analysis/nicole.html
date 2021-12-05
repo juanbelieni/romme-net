@@ -1,0 +1,46 @@
+{% extends "analysis/base.html" %}
+{% load static %}
+
+{% block title %}Nicole{% endblock title %}
+
+{% block analysis %}
+
+<h1>Qual é a densidade de dados pra alguma máquina, tendo em vista o tempo como parâmetro?</h1>
+
+<br>
+
+<h2>Análise</h2>
+
+<p>Primeiramente, a máquina com maior número de ocorrências foi escolhida. Com 46 entradas, a máquina 24 - Elaboração
+  Agitadores / Tanques - foi selecionada para análise.</p>
+
+<p>Nota-se três momentos em que as ocorrências dessa máquina se aglomeram. Isso pode ser interpretado como três momentos
+  com alta na fabricação de tanques. É interessante para a empresa avaliar melhor o que resultou nesses picos de
+  manutenção.</p>
+
+<p>
+  Em seguida, a análise foi feita em uma máquina aleatória: Envasadora Agua 1 L - id = 3.
+  Plotando o gráfico, observa-se que existem várias ocorrências no início do período, algumas ocorrências relativamente
+  bem distribuídas
+  em tempo médio e um bom período sem ocorrências em sequência.
+</p>
+
+<p>
+  Isso significa que a manutenção dessa máquina é constante, com poucas interrupções, e ela vem evoluindo em eficiência
+  (diminuindo o número de ocorrências e consequentemente diminuindo o número de horas perdidas com manutenção, além dos
+  gastos) com o tempo - o que é bastante positivo para a indústria.
+</p>
+
+<p>
+  Com análises desse tipo a empresa pode avaliar a situação de máquinas específicas e como elas vêm evoluindo com
+  relação ao tempo, para que seja decidido quando aposentá-las. As máquinas analisadas mostram bom desempenho - com uma
+  queda na necessidade de manutenção.
+</p>
+
+<br>
+
+<h2>Notebook</h2>
+
+<iframe src="{% static 'analysis/nicole.html' %}" width="100%" style="height: 225rem"><iframe>
+
+    {% endblock analysis %}
