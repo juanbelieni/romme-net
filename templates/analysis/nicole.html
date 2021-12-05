@@ -1,0 +1,14 @@
+{% extends "analysis/base.html" %}
+{% load static %}
+
+{% block title %}Nicole{% endblock title %}
+
+{% block analysis %}
+
+<h1> Qual é a densidade de dados pra alguma máquina, tendo em vista o tempo como parâmetro?</h1>
+
+<hr />
+
+<iframe src="{% static 'analysis/nicole.html' %}" width="100%" style="height: 225rem"><iframe>
+
+    {% endblock analysis %}

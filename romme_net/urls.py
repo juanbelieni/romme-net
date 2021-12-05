@@ -35,6 +35,7 @@ urlpatterns = [
     # Analysis views
     path("analises/", views.analysis, name="analysis"),
     path("analises/juan/", include("juan.urls")),
+    path("analises/nicole/", include("nicole.urls")),
 
     # Static files
     *staticfiles_urlpatterns(),
