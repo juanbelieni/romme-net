@@ -52,7 +52,10 @@ INSTALLED_APPS = [
     "material",
     "machine",
     "occurrence",
-    "dashboard"
+    "dashboard",
+    "carlos",
+    "juan",
+    "nicole",
 ]
 
 MIDDLEWARE = [
